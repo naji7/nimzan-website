@@ -1,0 +1,26 @@
+.contactNim {
+  width: calc(100vw - 250px);
+  //   padding: 20px 0px 0px 0px;
+  width: auto;
+  .input {
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid black;
+    width: 250px;
+    outline: none;
+    padding-left: 20px;
+  }
+  .inputarea {
+    height: 120px;
+    border-radius: 30px;
+    border: 1px solid black;
+    width: 250px;
+    resize: vertical;
+    outline: none;
+    padding-left: 20px;
+  }
+  ::placeholder {
+    padding-top: 10px;
+    background-color: white;
+  }
+}

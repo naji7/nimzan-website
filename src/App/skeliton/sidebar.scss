@@ -1,0 +1,86 @@
+.sidebar {
+  background-color: #f4f4f4;
+  height: 100vh;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding-top: 40px;
+  .imge {
+    span {
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+      font-family: "Crimson Text", serif;
+      letter-spacing: 3px;
+      font-size: 20px;
+    }
+    .sub {
+      font-family: "Quicksand", sans-serif;
+      font-size: 10px;
+      padding-top: 10px;
+    }
+  }
+
+  nav {
+    text-align: center;
+    ul {
+      list-style-type: none;
+      padding: 0px 20px;
+
+      li {
+        padding-top: 20px;
+        span {
+          font-size: 12px;
+          font-family: "Roboto", sans-serif;
+          letter-spacing: 1px;
+          font-weight: bold;
+          opacity: 0.7;
+          text-decoration: none;
+          position: relative;
+          padding-bottom: 5px;
+          cursor: pointer;
+          &:hover,
+          &.active {
+            color: blue;
+          }
+          &::after {
+            content: "";
+            width: 0%;
+            height: 1px;
+            background-color: blue;
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            border-radius: 10px;
+            transition: all 500ms ease;
+          }
+          &:hover::after {
+            left: 0%;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .copywrite {
+    width: 200px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .final {
+    width: 290px;
+
+    margin-bottom: 50px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    span {
+      opacity: 0.6;
+    }
+  }
+}

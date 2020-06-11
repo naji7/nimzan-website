@@ -1,0 +1,140 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  justify-content: flex-start;
+  width: calc(100vw - 300px);
+  .home1 {
+    overflow: hidden;
+    height: 100vh;
+    .slide-img {
+      position: absolute;
+      height: 100%;
+      z-index: -1;
+      width: calc(100vw - 290px);
+      img {
+        height: 100%;
+        width: calc(100vw - 290px);
+      }
+      .img1 {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        .head {
+          font-family: "Playfair Display", serif;
+          font-size: 60px;
+          letter-spacing: 1px;
+        }
+        .sub {
+          position: absolute;
+          font-family: "Quicksand", sans-serif;
+          letter-spacing: 2px;
+          opacity: 0.8;
+          padding-top: 15px;
+        }
+      }
+    }
+    #i1,
+    #i2 {
+      display: none;
+    }
+    #i1:checked ~ #one,
+    #i2:checked ~ #two {
+      z-index: 9;
+    }
+    #i1:checked ~ .nav #dot1,
+    #i2:checked ~ .nav #dot2 {
+      background: silver;
+    }
+    .nav {
+      height: 11px;
+      bottom: 10%;
+      position: absolute;
+      text-align: center;
+      z-index: 99;
+      // label {
+      //   border: 1px solid blue;
+      // }
+      .dots {
+        top: -5px;
+        width: 13px;
+        height: 13px;
+        margin: 6px 4px;
+        position: relative;
+        border-radius: 50%;
+        // display: inline-block;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .whoAmI {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-start;
+    .smlheading {
+      font-family: "Roboto", sans-serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      opacity: 0.5;
+      font-weight: bold;
+    }
+    .bighead {
+      font-family: "Lora", serif;
+      font-size: 18px;
+      letter-spacing: 4px;
+    }
+    .para {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0px;
+      font-family: "Quicksand", sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      line-height: 25px;
+    }
+  }
+  .mySkills {
+    .smlheading {
+      font-family: "Roboto", sans-serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      opacity: 0.5;
+      font-weight: bold;
+    }
+    .bighead {
+      font-family: "Lora", serif;
+      font-size: 18px;
+      letter-spacing: 4px;
+    }
+    .para {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0px;
+      font-family: "Quicksand", sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      line-height: 25px;
+    }
+  }
+  .skillImage {
+    .parallax {
+      background: url(./floor.jpg);
+      background-attachment: fixed;
+      .label {
+        letter-spacing: 6px;
+        opacity: 0.5;
+      }
+      h1 {
+        font-family: "Fira Sans", sans-serif;
+      }
+    }
+  }
+}
