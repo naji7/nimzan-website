@@ -1,139 +1,314 @@
-.home {
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  justify-content: flex-start;
-  width: calc(100vw - 300px);
-  .home1 {
-    overflow: hidden;
+.main {
+  .sidebar {
+    background-color: #f4f4f4;
     height: 100vh;
-    .slide-img {
-      position: absolute;
-      height: 100%;
-      z-index: -1;
-      width: calc(100vw - 290px);
-      img {
-        height: 100%;
-        width: calc(100vw - 290px);
-      }
-      .img1 {
-        position: absolute;
-        top: 30%;
-        left: 10%;
-        .head {
-          font-family: "Playfair Display", serif;
-          font-size: 60px;
-          letter-spacing: 1px;
-        }
-        .sub {
-          position: absolute;
-          font-family: "Quicksand", sans-serif;
-          letter-spacing: 2px;
-          opacity: 0.8;
-          padding-top: 15px;
-        }
-      }
-    }
-    #i1,
-    #i2 {
-      display: none;
-    }
-    #i1:checked ~ #one,
-    #i2:checked ~ #two {
-      z-index: 9;
-    }
-    #i1:checked ~ .nav #dot1,
-    #i2:checked ~ .nav #dot2 {
-      background: silver;
-    }
-    .nav {
-      height: 11px;
-      bottom: 10%;
-      position: absolute;
-      text-align: center;
-      z-index: 99;
-      // label {
-      //   border: 1px solid blue;
-      // }
-      .dots {
-        top: -5px;
-        width: 13px;
-        height: 13px;
-        margin: 6px 4px;
-        position: relative;
-        border-radius: 50%;
-        // display: inline-block;
-        background: rgba(0, 0, 0, 0.6);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding-top: 40px;
+    .imge {
+      span {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        padding-top: 30px;
+        font-family: "Crimson Text", serif;
+        letter-spacing: 3px;
+        font-size: 20px;
+      }
+      .sub {
+        font-family: "Quicksand", sans-serif;
+        font-size: 10px;
+        padding-top: 10px;
+      }
+    }
+
+    nav {
+      text-align: center;
+      .spann {
+        line-height: 40px;
+        font-size: 12px;
+        font-family: "Roboto", sans-serif;
+        letter-spacing: 1px;
+        font-weight: bold;
+        opacity: 0.7;
+        text-decoration: none;
+        position: relative;
+        padding-bottom: 5px;
         cursor: pointer;
+        &:hover,
+        &.active {
+          color: blue;
+        }
+        &::after {
+          content: "";
+          width: 0%;
+          height: 1px;
+          background-color: blue;
+          position: absolute;
+          bottom: 0%;
+          left: 50%;
+          border-radius: 10px;
+          transition: all 500ms ease;
+        }
+        &:hover::after {
+          left: 0%;
+          width: 100%;
+        }
+      }
+    }
+    .copywrite {
+      width: 200px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .final {
+      width: 290px;
+
+      margin-bottom: 50px;
+      font-family: "Quicksand", sans-serif;
+      font-size: 12px;
+      text-align: center;
+      span {
+        opacity: 0.6;
       }
     }
   }
+  main {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: flex-start;
+    width: calc(100vw - 300px);
+    .home1 {
+      overflow: hidden;
+      height: 100vh;
+      .slide-img {
+        position: absolute;
+        height: 100%;
+        z-index: -1;
+        width: calc(100vw - 300px);
+        img {
+          height: 100%;
+          width: calc(100vw - 300px);
+        }
+        .img1 {
+          position: absolute;
+          top: 30%;
+          left: 10%;
+          .head {
+            font-family: "Playfair Display", serif;
+            font-size: 60px;
+            letter-spacing: 1px;
+          }
+          .sub {
+            position: absolute;
+            font-family: "Quicksand", sans-serif;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            padding-top: 15px;
+          }
+        }
+      }
+      #i1,
+      #i2 {
+        display: none;
+      }
+      #i1:checked ~ #one,
+      #i2:checked ~ #two {
+        z-index: 9;
+      }
+      #i1:checked ~ .nav #dot1,
+      #i2:checked ~ .nav #dot2 {
+        background: silver;
+      }
+      .nav {
+        height: 11px;
+        bottom: 10%;
+        position: absolute;
+        text-align: center;
+        z-index: 99;
+        .dots {
+          top: -5px;
+          width: 13px;
+          height: 13px;
+          margin: 6px 4px;
+          position: relative;
+          border-radius: 50%;
+          background: rgba(0, 0, 0, 0.6);
+          display: flex;
+          flex-direction: column;
+          cursor: pointer;
+        }
+      }
+    }
 
-  .whoAmI {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: flex-start;
-    .smlheading {
-      font-family: "Roboto", sans-serif;
-      font-size: 10px;
-      letter-spacing: 6px;
-      opacity: 0.5;
-      font-weight: bold;
-    }
-    .bighead {
-      font-family: "Lora", serif;
-      font-size: 18px;
-      letter-spacing: 4px;
-    }
-    .para {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px 0px;
-      font-family: "Quicksand", sans-serif;
-      font-size: 14px;
-      letter-spacing: 1px;
-      opacity: 0.7;
-      line-height: 25px;
-    }
-  }
-  .mySkills {
-    .smlheading {
-      font-family: "Roboto", sans-serif;
-      font-size: 10px;
-      letter-spacing: 6px;
-      opacity: 0.5;
-      font-weight: bold;
-    }
-    .bighead {
-      font-family: "Lora", serif;
-      font-size: 18px;
-      letter-spacing: 4px;
-    }
-    .para {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px 0px;
-      font-family: "Quicksand", sans-serif;
-      font-size: 14px;
-      letter-spacing: 1px;
-      opacity: 0.7;
-      line-height: 25px;
-    }
-  }
-  .skillImage {
-    .parallax {
-      background: url(./floor.jpg);
-      background-attachment: fixed;
-      .label {
+    .whoAmI {
+      margin-top: 7.5%;
+      padding: 0% 5%;
+      .smlheading {
+        font-family: "Roboto", sans-serif;
+        font-size: 10px;
         letter-spacing: 6px;
         opacity: 0.5;
+        font-weight: bold;
       }
-      h1 {
-        font-family: "Fira Sans", sans-serif;
+      .bighead {
+        font-family: "Lora", serif;
+        font-size: 18px;
+        letter-spacing: 4px;
+      }
+      .para {
+        text-align: justify;
+        text-justify: inter-word;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0px;
+        font-family: "Quicksand", sans-serif;
+        font-size: 14px;
+        letter-spacing: 1px;
+        opacity: 0.7;
+        line-height: 25px;
+      }
+    }
+    .mySkills {
+      margin-top: 25%;
+      padding: 0% 5%;
+      .smlheading {
+        font-family: "Roboto", sans-serif;
+        font-size: 10px;
+        letter-spacing: 6px;
+        opacity: 0.5;
+        font-weight: bold;
+      }
+      .bighead {
+        font-family: "Lora", serif;
+        font-size: 18px;
+        letter-spacing: 4px;
+      }
+      .para {
+        text-align: justify;
+        text-justify: inter-word;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0px;
+        font-family: "Quicksand", sans-serif;
+        font-size: 14px;
+        letter-spacing: 1px;
+        opacity: 0.7;
+        line-height: 25px;
+      }
+    }
+    .skillImage {
+      margin-top: 3%;
+      .parallax {
+        background: url(./floor.jpg);
+        background-attachment: fixed;
+        .label {
+          letter-spacing: 6px;
+          opacity: 0.5;
+        }
+        h1 {
+          font-family: "Fira Sans", sans-serif;
+        }
+      }
+    }
+    .education {
+      margin-top: 20%;
+      padding: 0% 5%;
+      .smlheading {
+        font-family: "Roboto", sans-serif;
+        font-size: 10px;
+        letter-spacing: 6px;
+        opacity: 0.5;
+        font-weight: bold;
+      }
+      .bighead {
+        font-family: "Lora", serif;
+        font-size: 18px;
+        letter-spacing: 4px;
+      }
+      .panel {
+        margin-top: 3%;
+
+        .ExpansionPanelSummary {
+          background-color: #f4f4f4;
+          span {
+            padding: 5px 0px;
+            font-family: "Roboto", sans-serif;
+            letter-spacing: 2px;
+          }
+        }
+        .ExpansionPanelDetails {
+          span {
+            text-align: justify;
+            text-justify: inter-word;
+            font-family: "Quicksand", sans-serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 25px;
+            padding: 10px 30px;
+          }
+        }
+      }
+    }
+    .contact {
+      padding: 0% 5%;
+      .smlheading {
+        font-family: "Roboto", sans-serif;
+        font-size: 10px;
+        letter-spacing: 6px;
+        opacity: 0.5;
+        font-weight: bold;
+      }
+      .bighead {
+        font-family: "Lora", serif;
+        font-size: 18px;
+        letter-spacing: 4px;
+      }
+      .para {
+        text-align: justify;
+        text-justify: inter-word;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0px;
+        font-family: "Quicksand", sans-serif;
+        font-size: 14px;
+        letter-spacing: 1px;
+        opacity: 0.7;
+        line-height: 25px;
+      }
+      .input {
+        height: 40px;
+        border-radius: 40px;
+        border: 1px solid black;
+        width: 250px;
+        outline: none;
+        padding-left: 20px;
+        opacity: 0.7;
+      }
+      .inputarea {
+        height: 120px;
+        border-radius: 30px;
+        border: 1px solid black;
+        width: 250px;
+        resize: vertical;
+        outline: none;
+        padding-left: 20px;
+        opacity: 0.7;
+      }
+      ::placeholder {
+        padding-top: 10px;
+        background-color: white;
+        color: black;
+        opacity: 0.7;
       }
     }
   }

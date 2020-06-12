@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./sidebar.scss";
 import { Link } from "react-router-dom";
-import img from "./nim2.jpg";
+// import img from "./nim2.jpg";
 import * as Scroll from "react-scroll";
 import {
   Element,
@@ -45,8 +45,13 @@ export default class Sidebar extends Component {
         <div className="imge">
           <div style={{ display: "flex", justifyContent: "center" }}>
             <img
-              src={img}
-              style={{ borderRadius: "50%", height: "170px", width: "170px" }}
+            // src={img}
+            // style={{
+            //   borderRadius: "50%",
+            //   height: "170px",
+            //   width: "170px",
+            //   position: "fixed",
+            // }}
             />
           </div>
           <span>NIMZAN NAZZAR</span>
