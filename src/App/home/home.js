@@ -4,6 +4,7 @@ import "./home.scss";
 import img from "./nim1.jpg";
 import img1 from "./floor.jpg";
 import img2 from "./nim2.jpg";
+
 import * as Scroll from "react-scroll";
 import {
   Link,
@@ -24,29 +25,17 @@ import { act } from "react-dom/test-utils";
 import { withStyles } from "@material-ui/core/styles";
 
 export default class Home extends Component {
+  state = {
+    done: false,
+  };
   render() {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-        className="main"
-      >
+      <div className="main">
         <div>
           <div className="sidebar">
             <div className="imge">
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <img
-                  src={img2}
-                  alt="img2"
-                  style={{
-                    borderRadius: "50%",
-                    height: "170px",
-                    width: "170px",
-                  }}
-                />
+              <div className="imgside">
+                <img className="img2" src={img2} alt="img2" />
               </div>
               <span>NIMZAN NAZZAR</span>
               <span className="sub">SOFTWARE ENGINEER | SEO ANALYST</span>
@@ -119,7 +108,6 @@ export default class Home extends Component {
 
             <div className="copywrite">
               <div>
-                {" "}
                 <i
                   className="fa fa-facebook"
                   onClick={() => {
@@ -128,7 +116,6 @@ export default class Home extends Component {
                 ></i>
               </div>
               <div>
-                {" "}
                 <i
                   className="fa fa-twitter"
                   onClick={() => {
@@ -166,8 +153,6 @@ export default class Home extends Component {
           <main>
             <main>
               <div className="home1" id="s1">
-                <input type="radio" name="images" id="i1" checked />
-                <input type="radio" name="images" id="i2" />
                 <div className="slide-img" id="one">
                   <img src={img} />
                   <div className="img1">
@@ -177,20 +162,6 @@ export default class Home extends Component {
                     <br />
                     <span className="sub">Software Engineer | SEO Analyst</span>
                   </div>
-                </div>
-                <div className="slide-img" id="two">
-                  <img src={img1} />
-                  <div className="img1">
-                    <span className="head">Hi!</span>
-                    <br />
-                    <span className="head">I'm Nimzan</span>
-                    <br />
-                    <span className="sub">Software Engineer | SEO Analyst</span>
-                  </div>
-                </div>
-                <div className="nav">
-                  <label className="dots" id="dot1" for="i1"></label>
-                  <label className="dots" id="dot2" for="i2"></label>
                 </div>
               </div>
               <section className="whoAmI" id="s2">
@@ -242,104 +213,59 @@ export default class Home extends Component {
               </div>
               <div className="skillImage">
                 <div className="parallax">
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                      padding: "80px 80px",
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        flexDirection: "column",
-                      }}
-                    >
-                      <h1
-                        style={{
-                          color: "white",
-                          width: "100px",
-                        }}
-                      >
+                  <div className="one">
+                    <div className="one-one">
+                      <h1>
                         <CountUp
+                          className="h1"
                           end={90}
                           duration={4}
                           suffix="%"
                           decimals={1}
                         />
                       </h1>
-                      <span className="label" style={{ color: "white" }}>
-                        COMUNICATION
-                      </span>
+                      <span className="label">COMUNICATION</span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        flexDirection: "column",
-                      }}
-                    >
-                      <h1
-                        style={{
-                          color: "white",
-                          width: "100px",
-                        }}
-                      >
+                    <div className="one-one">
+                      <h1>
                         <CountUp
+                          className="h1"
                           end={98}
                           duration={3}
                           suffix="%"
                           decimals={1}
                         />
                       </h1>
-                      <span className="label" style={{ color: "white" }}>
-                        LEADERSHIP
-                      </span>
+                      <span className="label">LEADERSHIP</span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        flexDirection: "column",
-                      }}
-                    >
-                      <h1 style={{ color: "white", width: "100px" }}>
+                    <div className="one-one">
+                      <h1>
                         <CountUp
+                          className="h1"
                           end={87}
                           duration={2}
                           suffix="%"
                           decimals={1}
                         />
                       </h1>
-                      <span className="label" style={{ color: "white" }}>
-                        CREATIVITY
-                      </span>
+                      <span className="label">CREATIVITY</span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        flexDirection: "column",
-                      }}
-                    >
-                      <h1 style={{ color: "white", width: "100px" }}>
+                    <div className="one-one">
+                      <h1>
                         <CountUp
+                          className="h1"
                           end={80}
                           duration={3}
                           suffix="%"
                           decimals={1}
                         />
                       </h1>
-                      <span className="label" style={{ color: "white" }}>
-                        GOSSIPING
-                      </span>
+                      <span className="label">GOSSIPING</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="education" style={{ height: "100vh" }} id="s4">
+              <div className="education" id="s4">
                 <div>
                   <span className="smlheading">EDUCATION</span>
                 </div>
@@ -458,21 +384,23 @@ export default class Home extends Component {
                     <br /> Please sent us a message.
                   </p>
                 </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    marginBottom: "50px",
-                  }}
-                >
+                <div className="form">
                   <input
+                    id="name"
                     className="input"
                     type="text"
                     name=""
                     placeholder="Name"
+                    onKeyUp={(i) => {
+                      let key = i.target.value
+                        .toString()
+                        .replace(/[^A-Za-z]/gi, "");
+                      document.getElementById("name").value = key;
+                    }}
                   ></input>
                   &nbsp;
                   <input
+                    id="email"
                     className="input"
                     type="text"
                     name=""
@@ -480,41 +408,151 @@ export default class Home extends Component {
                   ></input>
                   &nbsp;
                   <input
+                    id="phone"
                     className="input"
                     type="text"
                     name=""
                     placeholder="Phone"
+                    onKeyUp={(i) => {
+                      let key = i.target.value
+                        .toString()
+                        .replace(/[a-zA-Z]/g, "");
+                      document.getElementById("phone").value = key;
+                      // this.state.currentInvoice.price = key;
+                    }}
                   ></input>
                   &nbsp;
                   <textarea
+                    id="area"
                     className="inputarea"
                     type="text"
                     name=""
                     placeholder="Your Message"
                   ></textarea>
                   &nbsp;
-                  <button
-                    style={{
-                      width: "270px",
-                      height: "30px",
-                      borderRadius: "50px",
-                      outline: "none",
-                      border: "1px solid black",
-                      backgroundColor: "black",
-                      opacity: "0.8",
-                      color: "white",
-                      cursor: "pointer",
+                  <input
+                    className="button"
+                    type="button"
+                    value="Submit"
+                    id="btn"
+                    onClick={() => {
+                      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                      var bc = null;
+                      if (document.getElementById("name").value == "") {
+                        document.getElementById("name").style.border =
+                          "1px solid red";
+                        // this.setState({ done: false });
+                        this.state.done = false;
+                      } else {
+                        document.getElementById("name").style.border =
+                          "1px solid black";
+                        // this.setState({ done: true });
+                        this.state.done = true;
+                      }
+                      if (document.getElementById("email").value == "") {
+                        document.getElementById("email").style.border =
+                          "1px solid red";
+                        // this.setState({ done: false });
+                        this.state.done = false;
+                      } else {
+                        document.getElementById("email").style.border =
+                          "1px solid black";
+                        // this.setState({ done: true });
+                        this.state.done = true;
+                      }
+                      if (document.getElementById("phone").value == "") {
+                        document.getElementById("phone").style.border =
+                          "1px solid red";
+                        // this.setState({ done: false });
+                        this.state.done = false;
+                      } else {
+                        document.getElementById("phone").style.border =
+                          "1px solid black";
+                        // this.setState({ done: true });
+                        this.state.done = true;
+                      }
+                      if (document.getElementById("area").value == "") {
+                        document.getElementById("area").style.border =
+                          "1px solid red";
+                        // this.setState({ done: false });
+                        this.state.done = false;
+                      } else {
+                        document.getElementById("area").style.border =
+                          "1px solid black";
+                        // this.setState({ done: true });
+                        this.state.done = true;
+                      }
+                      if (
+                        reg.test(document.getElementById("email").value) ==
+                        false
+                      ) {
+                        document.getElementById("email").style.border =
+                          "1px solid red";
+                        // this.setState({ done: false });
+                        this.state.done = false;
+                      }
+
+                      if (this.state.done == true) {
+                        bc = document.getElementById("btn");
+                        bc.style.background = "rgba(255,0,0,0.6)";
+                        bc.style.border = "rgba(255,0,0,0.6)";
+                        if (bc.value == "Submit")
+                          bc.value = "Thank You, I'll get to you soon.";
+                        else bc.value = "Submit";
+                      }
                     }}
-                  >
-                    Sumbit
-                  </button>
+                  ></input>
                 </div>
-                <div>
+                <div className="letUsTalk">
                   <span className="smlheading">LET'S TALK</span>
                 </div>
                 &nbsp;
                 <div>
                   <span className="bighead">REACH OUT TO ME AT</span>
+                </div>
+                <div className="containerr">
+                  <div className="box">
+                    <div className="icon">
+                      <i className="fa fa-map-marker" aria-hidden="true"></i>
+                      <h4>Address</h4>
+                      <h3>Nimzan Nazzar, Hapugastalawa</h3>
+                    </div>
+                  </div>
+                  <div className="box">
+                    <div className="icon">
+                      <i className="fa fa-phone" aria-hidden="true"></i>
+                      <h4>Mobile</h4>
+                      <h3>+94 77 712 1553</h3>
+                    </div>
+                  </div>
+                  <div className="box">
+                    <div className="icon">
+                      <i className="fa fa-envelope" aria-hidden="true"></i>
+                      <h4>Email</h4>
+                      <h3>mnimzan@gmail.com</h3>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <span className="smlheading">SOCIAL MEDIA</span>
+                </div>
+                &nbsp;
+                <div>
+                  <span className="bighead">FIND ME ON ONLINE</span>
+                </div>
+                <div className="media">
+                  <div className="btn1">
+                    <i className="fa fa-facebook"></i>
+                  </div>
+                  <div className="btn2">
+                    <i className="fa fa-twitter"></i>
+                  </div>
+                  <div className="btn3">
+                    <i className="fa fa-instagram"></i>
+                  </div>
+                  <div className="btn4">
+                    <i className="fa fa-linkedin"></i>
+                  </div>
                 </div>
               </section>
             </main>
