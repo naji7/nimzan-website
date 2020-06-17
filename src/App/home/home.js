@@ -61,7 +61,17 @@ export default class Home extends Component {
               <span></span>
               <span></span>
             </div>
-            <div className="side">
+            <div
+              className="side"
+              onTouchMove={() => {
+                document.getElementById("sidebar").style.marginLeft = "0";
+                document.getElementById("tb").style.visibility = "visible";
+              }}
+              // onClick={() => {
+              //   document.getElementById("sidebar").style.marginLeft = "0";
+              //   document.getElementById("tb").style.visibility = "visible";
+              // }}
+            >
               <div className="imge">
                 <div className="imgside">
                   <img className="img2" src={img2} alt="img2" />
@@ -170,9 +180,7 @@ export default class Home extends Component {
                   <i
                     className="fa fa-facebook"
                     onClick={() => {
-                      window.open(
-                        "https://www.facebook.com/mohamed.nasik.1023"
-                      );
+                      window.open("https://www.facebook.com/mohamed.nimzan.9");
                     }}
                   ></i>
                 </div>
@@ -180,9 +188,7 @@ export default class Home extends Component {
                   <i
                     className="fa fa-twitter"
                     onClick={() => {
-                      window.open(
-                        "https://www.facebook.com/mohamed.nasik.1023"
-                      );
+                      window.open("https://twitter.com/NimzanNazzar");
                     }}
                   ></i>
                 </div>
@@ -191,9 +197,7 @@ export default class Home extends Component {
                   <i
                     className="fa fa-instagram"
                     onClick={() => {
-                      window.open(
-                        "https://www.facebook.com/mohamed.nasik.1023"
-                      );
+                      window.open("https://www.instagram.com/nimz_zlatan/");
                     }}
                   ></i>
                 </div>
@@ -203,7 +207,7 @@ export default class Home extends Component {
                     className="fa fa-linkedin"
                     onClick={() => {
                       window.open(
-                        "https://www.facebook.com/mohamed.nasik.1023"
+                        "https://www.linkedin.com/in/nimzan-nazzar-60613797/"
                       );
                     }}
                   ></i>
@@ -653,16 +657,40 @@ export default class Home extends Component {
                 </div>
                 <div className="media">
                   <div className="btn1">
-                    <i className="fa fa-facebook"></i>
+                    <i
+                      className="fa fa-facebook"
+                      onClick={() => {
+                        window.open(
+                          "https://www.facebook.com/mohamed.nimzan.9"
+                        );
+                      }}
+                    ></i>
                   </div>
                   <div className="btn2">
-                    <i className="fa fa-twitter"></i>
+                    <i
+                      className="fa fa-twitter"
+                      onClick={() => {
+                        window.open("https://twitter.com/NimzanNazzar");
+                      }}
+                    ></i>
                   </div>
                   <div className="btn3">
-                    <i className="fa fa-instagram"></i>
+                    <i
+                      className="fa fa-instagram"
+                      onClick={() => {
+                        window.open("https://www.instagram.com/nimz_zlatan/");
+                      }}
+                    ></i>
                   </div>
                   <div className="btn4">
-                    <i className="fa fa-linkedin"></i>
+                    <i
+                      className="fa fa-linkedin"
+                      onClick={() => {
+                        window.open(
+                          "https://www.linkedin.com/in/nimzan-nazzar-60613797/"
+                        );
+                      }}
+                    ></i>
                   </div>
                 </div>
               </section>

@@ -113,6 +113,7 @@
         z-index: -1;
         width: calc(100vw - 300px);
         img {
+          // src=""
           animation: fadeIn 6s;
           height: 100%;
           width: 100%;
@@ -333,6 +334,7 @@
           height: 120px;
           border-radius: 30px;
           border: 1px solid black;
+
           width: 250px;
           resize: vertical;
           outline: none;
@@ -687,9 +689,10 @@
         .slide-img {
           height: 100%;
           width: 100vw;
+          overflow: hidden;
           img {
-            height: 100%;
-            width: 100%;
+            width: 800px;
+            margin-left: -300px;
           }
         }
       }
