@@ -1,5 +1,6 @@
-import React, { Component, useRef } from "react";
+import React, { Component, useRef, useEffect } from "react";
 import AnimatedNumber from "react-animated-number";
+import CountUp, { startAnimation } from "react-countup";
 import "./home.scss";
 import img from "./nim1.jpg";
 import img1 from "./floor.jpg";
@@ -15,7 +16,6 @@ import {
   scroller,
 } from "react-scroll";
 import BottomBar from "../templates/bottomBar";
-import CountUp from "react-countup";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
@@ -23,138 +23,222 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { act } from "react-dom/test-utils";
 import { withStyles } from "@material-ui/core/styles";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import VisibilitySensor from "react-visibility-sensor";
 
+const style = {
+  componentName: {},
+  col: {},
+  countup: {},
+};
 export default class Home extends Component {
   state = {
     done: false,
   };
+
+  onVisibilityChange = (isVisible) => {
+    if (isVisible) {
+      startAnimation(this.myCountUp);
+    }
+  };
+
   render() {
     return (
-      <div className="main">
+      <div className="mainn">
         <div>
-          <div className="sidebar">
-            <div className="imge">
-              <div className="imgside">
-                <img className="img2" src={img2} alt="img2" />
-              </div>
-              <span>NIMZAN NAZZAR</span>
-              <span className="sub">SOFTWARE ENGINEER | SEO ANALYST</span>
+          <div id="sidebar">
+            <div
+              id="tb"
+              className="tgleBtn"
+              onClick={() => {
+                // document.getElementById("sidebar").classList.toggle("actives");
+                document.getElementById("sidebar").style.marginLeft = "300px";
+                document.getElementById("tb").style.visibility = "hidden";
+              }}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-
-            <nav>
-              <Link
-                className="spann"
-                activeClass="active"
-                to="s1"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                HOME
-              </Link>
-              <br />
-
-              <Link
-                className="spann"
-                activeClass="active"
-                to="s2"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                ABOUT
-              </Link>
-              <br />
-
-              <Link
-                className="spann"
-                activeClass="active"
-                to="s3"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                SKILLS
-              </Link>
-              <br />
-
-              <Link
-                className="spann"
-                activeClass="active"
-                to="s4"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                EDUCATION
-              </Link>
-              <br />
-              <Link
-                className="spann"
-                activeClass="active"
-                to="s5"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                CONTACT
-              </Link>
-            </nav>
-
-            <div className="copywrite">
-              <div>
-                <i
-                  className="fa fa-facebook"
-                  onClick={() => {
-                    window.open("https://www.facebook.com/mohamed.nasik.1023");
-                  }}
-                ></i>
+            <div className="side">
+              <div className="imge">
+                <div className="imgside">
+                  <img className="img2" src={img2} alt="img2" />
+                </div>
+                <span>NIMZAN NAZZAR</span>
+                <span className="sub">SOFTWARE ENGINEER | SEO ANALYST</span>
               </div>
-              <div>
-                <i
-                  className="fa fa-twitter"
+
+              <nav>
+                <Link
+                  className="spann"
+                  activeClass="active"
+                  to="s1"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
                   onClick={() => {
-                    window.open("https://www.facebook.com/mohamed.nasik.1023");
+                    // document
+                    //   .getElementById("sidebar")
+                    //   .classList.toggle("actives");
+                    document.getElementById("sidebar").style.marginLeft = "0";
                   }}
-                ></i>
-              </div>
-              <div>
-                {" "}
-                <i
-                  className="fa fa-instagram"
+                >
+                  HOME
+                </Link>
+                <br />
+
+                <Link
+                  className="spann"
+                  activeClass="active"
+                  to="s2"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
                   onClick={() => {
-                    window.open("https://www.facebook.com/mohamed.nasik.1023");
+                    // document
+                    //   .getElementById("sidebar")
+                    //   .classList.toggle("actives");
+                    document.getElementById("sidebar").style.marginLeft = "0";
+                    document.getElementById("tb").style.visibility = "visible";
                   }}
-                ></i>
-              </div>
-              <div>
-                {" "}
-                <i
-                  className="fa fa-linkedin"
+                >
+                  ABOUT
+                </Link>
+                <br />
+
+                <Link
+                  className="spann"
+                  activeClass="active"
+                  to="s3"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
                   onClick={() => {
-                    window.open("https://www.facebook.com/mohamed.nasik.1023");
+                    // document
+                    //   .getElementById("sidebar")
+                    //   .classList.toggle("actives");
+                    document.getElementById("sidebar").style.marginLeft = "0";
+                    document.getElementById("tb").style.visibility = "visible";
                   }}
-                ></i>
+                >
+                  SKILLS
+                </Link>
+                <br />
+
+                <Link
+                  className="spann"
+                  activeClass="active"
+                  to="s4"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  onClick={() => {
+                    // document
+                    //   .getElementById("sidebar")
+                    //   .classList.toggle("actives");
+                    document.getElementById("sidebar").style.marginLeft = "0";
+                    document.getElementById("tb").style.visibility = "visible";
+                  }}
+                >
+                  EDUCATION
+                </Link>
+                <br />
+                <Link
+                  className="spann"
+                  activeClass="active"
+                  to="s5"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  onClick={() => {
+                    document.getElementById("sidebar").style.marginLeft = "0";
+                    document.getElementById("tb").style.visibility = "visible";
+                  }}
+                >
+                  CONTACT
+                </Link>
+              </nav>
+              <div className="copywrite">
+                <div>
+                  <i
+                    className="fa fa-facebook"
+                    onClick={() => {
+                      window.open(
+                        "https://www.facebook.com/mohamed.nasik.1023"
+                      );
+                    }}
+                  ></i>
+                </div>
+                <div>
+                  <i
+                    className="fa fa-twitter"
+                    onClick={() => {
+                      window.open(
+                        "https://www.facebook.com/mohamed.nasik.1023"
+                      );
+                    }}
+                  ></i>
+                </div>
+                <div>
+                  {" "}
+                  <i
+                    className="fa fa-instagram"
+                    onClick={() => {
+                      window.open(
+                        "https://www.facebook.com/mohamed.nasik.1023"
+                      );
+                    }}
+                  ></i>
+                </div>
+                <div>
+                  {" "}
+                  <i
+                    className="fa fa-linkedin"
+                    onClick={() => {
+                      window.open(
+                        "https://www.facebook.com/mohamed.nasik.1023"
+                      );
+                    }}
+                  ></i>
+                </div>
               </div>
-            </div>
-            <div className="final">
-              <span>
-                Copyright &copy; 2020 Nimzan Nazzar. All Rights Reserved
-              </span>
+              <div className="final">
+                <span>
+                  Copyright &copy; 2020 Nimzan Nazzar. All Rights Reserved
+                </span>
+              </div>
             </div>
           </div>
         </div>
+
         <main>
           <main>
-            <main>
+            <main
+              id="cont"
+              className="main"
+              onTouchMove={() => {
+                document.getElementById("sidebar").style.marginLeft = "0";
+                document.getElementById("tb").style.visibility = "visible";
+              }}
+              onClick={() => {
+                document.getElementById("sidebar").style.marginLeft = "0";
+                document.getElementById("tb").style.visibility = "visible";
+              }}
+            >
               <div className="home1" id="s1">
                 <div className="slide-img" id="one">
-                  <img src={img} />
+                  <img
+                    src={img}
+                    className="img-fluid"
+                    alt="Responsive image"
+                  ></img>
                   <div className="img1">
                     <span className="head">Hi!</span>
                     <br />
@@ -164,7 +248,7 @@ export default class Home extends Component {
                   </div>
                 </div>
               </div>
-              <section className="whoAmI" id="s2">
+              <div className="whoAmI" id="s2" data-aos="fade-right">
                 <div>
                   <span className="smlheading">ABOUT US</span>
                 </div>
@@ -194,8 +278,8 @@ export default class Home extends Component {
                     complete product.
                   </p>
                 </div>
-              </section>
-              <div className="mySkills" id="s3">
+              </div>
+              <div className="mySkills" id="s3" data-aos="fade-right">
                 <div>
                   <span className="smlheading">MY SPECIALTY</span>
                 </div>
@@ -222,7 +306,14 @@ export default class Home extends Component {
                           duration={4}
                           suffix="%"
                           decimals={1}
-                        />
+                          redraw={true}
+                        >
+                          {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} delayedCall>
+                              <span ref={countUpRef} />
+                            </VisibilitySensor>
+                          )}
+                        </CountUp>
                       </h1>
                       <span className="label">COMUNICATION</span>
                     </div>
@@ -234,7 +325,14 @@ export default class Home extends Component {
                           duration={3}
                           suffix="%"
                           decimals={1}
-                        />
+                          redraw={true}
+                        >
+                          {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} delayedCall>
+                              <span ref={countUpRef} />
+                            </VisibilitySensor>
+                          )}
+                        </CountUp>
                       </h1>
                       <span className="label">LEADERSHIP</span>
                     </div>
@@ -246,7 +344,14 @@ export default class Home extends Component {
                           duration={2}
                           suffix="%"
                           decimals={1}
-                        />
+                          redraw={true}
+                        >
+                          {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} delayedCall>
+                              <span ref={countUpRef} />
+                            </VisibilitySensor>
+                          )}
+                        </CountUp>
                       </h1>
                       <span className="label">CREATIVITY</span>
                     </div>
@@ -258,14 +363,21 @@ export default class Home extends Component {
                           duration={3}
                           suffix="%"
                           decimals={1}
-                        />
+                          redraw={true}
+                        >
+                          {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} delayedCall>
+                              <span ref={countUpRef} />
+                            </VisibilitySensor>
+                          )}
+                        </CountUp>
                       </h1>
                       <span className="label">GOSSIPING</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="education" id="s4">
+              <div className="education" id="s4" data-aos="fade-right">
                 <div>
                   <span className="smlheading">EDUCATION</span>
                 </div>
@@ -367,7 +479,7 @@ export default class Home extends Component {
                   </ExpansionPanel>
                 </div>
               </div>
-              <section className="contact" id="s5">
+              <section className="contact" id="s5" data-aos="fade-right">
                 <div>
                   <span className="smlheading">GET IN TOUCH</span>
                 </div>
@@ -418,7 +530,6 @@ export default class Home extends Component {
                         .toString()
                         .replace(/[a-zA-Z]/g, "");
                       document.getElementById("phone").value = key;
-                      // this.state.currentInvoice.price = key;
                     }}
                   ></input>
                   &nbsp;
@@ -555,6 +666,15 @@ export default class Home extends Component {
                   </div>
                 </div>
               </section>
+              <div
+                className="wave"
+                style={{
+                  position: "absolute",
+                  width: "100%",
+                  height: "143px",
+                  bottom: "0",
+                }}
+              ></div>
             </main>
           </main>
         </main>
