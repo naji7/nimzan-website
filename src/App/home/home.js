@@ -5,6 +5,7 @@ import "./home.scss";
 import img from "./nim1.jpg";
 import img1 from "./floor.jpg";
 import img2 from "./nim2.jpg";
+import img3 from "./nimp.JPG";
 
 import * as Scroll from "react-scroll";
 import {
@@ -26,6 +27,8 @@ import { withStyles } from "@material-ui/core/styles";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import VisibilitySensor from "react-visibility-sensor";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 const style = {
   componentName: {},
@@ -35,6 +38,12 @@ const style = {
 export default class Home extends Component {
   state = {
     done: false,
+    value: "Submit",
+    name: "",
+    email: "",
+    phone: "",
+    area: "",
+    btn: "",
   };
 
   onVisibilityChange = (isVisible) => {
@@ -52,7 +61,6 @@ export default class Home extends Component {
               id="tb"
               className="tgleBtn"
               onClick={() => {
-                // document.getElementById("sidebar").classList.toggle("actives");
                 document.getElementById("sidebar").style.marginLeft = "300px";
                 document.getElementById("tb").style.visibility = "hidden";
               }}
@@ -67,10 +75,6 @@ export default class Home extends Component {
                 document.getElementById("sidebar").style.marginLeft = "0";
                 document.getElementById("tb").style.visibility = "visible";
               }}
-              // onClick={() => {
-              //   document.getElementById("sidebar").style.marginLeft = "0";
-              //   document.getElementById("tb").style.visibility = "visible";
-              // }}
             >
               <div className="imge">
                 <div className="imgside">
@@ -90,9 +94,6 @@ export default class Home extends Component {
                   offset={-70}
                   duration={500}
                   onClick={() => {
-                    // document
-                    //   .getElementById("sidebar")
-                    //   .classList.toggle("actives");
                     document.getElementById("sidebar").style.marginLeft = "0";
                   }}
                 >
@@ -109,9 +110,6 @@ export default class Home extends Component {
                   offset={-70}
                   duration={500}
                   onClick={() => {
-                    // document
-                    //   .getElementById("sidebar")
-                    //   .classList.toggle("actives");
                     document.getElementById("sidebar").style.marginLeft = "0";
                     document.getElementById("tb").style.visibility = "visible";
                   }}
@@ -129,9 +127,6 @@ export default class Home extends Component {
                   offset={-70}
                   duration={500}
                   onClick={() => {
-                    // document
-                    //   .getElementById("sidebar")
-                    //   .classList.toggle("actives");
                     document.getElementById("sidebar").style.marginLeft = "0";
                     document.getElementById("tb").style.visibility = "visible";
                   }}
@@ -149,9 +144,6 @@ export default class Home extends Component {
                   offset={-70}
                   duration={500}
                   onClick={() => {
-                    // document
-                    //   .getElementById("sidebar")
-                    //   .classList.toggle("actives");
                     document.getElementById("sidebar").style.marginLeft = "0";
                     document.getElementById("tb").style.visibility = "visible";
                   }}
@@ -265,13 +257,20 @@ export default class Home extends Component {
                     {" "}
                     <strong> Nimzan Nazzar</strong>, former student of Al Min
                     Haj National School is completed his BSc(Hons) Computer
-                    Science(Software Engineering) Degree at Sri Lanka Institute
-                    Of Information Technology. <br /> <br />
+                    Science(Software Engineering) Degree at{" "}
+                    <a href="https://www.sliit.lk/">
+                      Sri Lanka Institute Of Information Technology.
+                    </a>{" "}
+                    <br /> <br />
                     The 24 years old has three year plus work experience in the
                     area of Software Engineering and Search Engine
                     optimizing(SEO) with reputed Organizations.
                     <br />
-                    <br /> Currently associated with hvvhbhjhj. <br />
+                    <br /> Currently associated with{" "}
+                    <a href="https://rakbank.ae/wps/portal/retail-banking">
+                      RakBank.
+                    </a>
+                    <br />
                     <br /> Nimzan is a IT enthusiast with a good eye on the
                     level of detail. Having graduated as a computer engineer, he
                     is well skilled on real time web technologies and is
@@ -501,122 +500,114 @@ export default class Home extends Component {
                   </p>
                 </div>
                 <div className="form">
-                  <input
+                  <TextField
+                    error={this.state.name}
+                    helperText={this.state.name}
+                    className="TextField"
                     id="name"
-                    className="input"
-                    type="text"
-                    name=""
-                    placeholder="Name"
+                    label="Name"
+                    variant="outlined"
                     onKeyUp={(i) => {
                       let key = i.target.value
                         .toString()
                         .replace(/[^A-Za-z]/gi, "");
                       document.getElementById("name").value = key;
                     }}
-                  ></input>
+                  />
                   &nbsp;
-                  <input
+                  <TextField
+                    error={this.state.email}
+                    helperText={this.state.email}
+                    className="TextField"
                     id="email"
-                    className="input"
-                    type="text"
-                    name=""
-                    placeholder="Email"
-                  ></input>
+                    label="Email"
+                    variant="outlined"
+                  />
                   &nbsp;
-                  <input
+                  <TextField
+                    error={this.state.phone}
+                    helperText={this.state.phone}
+                    className="TextField"
                     id="phone"
-                    className="input"
-                    type="text"
-                    name=""
-                    placeholder="Phone"
+                    label="Phone"
+                    variant="outlined"
                     onKeyUp={(i) => {
                       let key = i.target.value
                         .toString()
                         .replace(/[a-zA-Z]/g, "");
                       document.getElementById("phone").value = key;
                     }}
-                  ></input>
+                  />
                   &nbsp;
-                  <textarea
+                  <TextField
+                    error={this.state.area}
+                    helperText={this.state.area}
+                    className="TextField"
                     id="area"
-                    className="inputarea"
-                    type="text"
-                    name=""
-                    placeholder="Your Message"
-                  ></textarea>
+                    label="Your Message"
+                    variant="outlined"
+                  />
                   &nbsp;
-                  <input
-                    className="button"
-                    type="button"
-                    value="Submit"
+                  <Button
+                    disabled={this.state.btn}
                     id="btn"
+                    className="Button"
+                    variant="outlined"
                     onClick={() => {
                       var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
                       var bc = null;
                       if (document.getElementById("name").value == "") {
-                        document.getElementById("name").style.border =
-                          "1px solid red";
-                        // this.setState({ done: false });
+                        this.setState({
+                          name: "* This field should not be null",
+                        });
                         this.state.done = false;
                       } else {
-                        document.getElementById("name").style.border =
-                          "1px solid black";
-                        // this.setState({ done: true });
+                        this.setState({ name: "" });
                         this.state.done = true;
                       }
                       if (document.getElementById("email").value == "") {
-                        document.getElementById("email").style.border =
-                          "1px solid red";
-                        // this.setState({ done: false });
+                        this.setState({
+                          email: "* This field should not be null",
+                        });
                         this.state.done = false;
                       } else {
-                        document.getElementById("email").style.border =
-                          "1px solid black";
-                        // this.setState({ done: true });
+                        this.setState({ email: "" });
                         this.state.done = true;
                       }
                       if (document.getElementById("phone").value == "") {
-                        document.getElementById("phone").style.border =
-                          "1px solid red";
-                        // this.setState({ done: false });
+                        this.setState({
+                          phone: "* This field should not be null",
+                        });
                         this.state.done = false;
                       } else {
-                        document.getElementById("phone").style.border =
-                          "1px solid black";
-                        // this.setState({ done: true });
+                        this.setState({ phone: "" });
                         this.state.done = true;
                       }
                       if (document.getElementById("area").value == "") {
-                        document.getElementById("area").style.border =
-                          "1px solid red";
-                        // this.setState({ done: false });
+                        this.setState({
+                          area: "* This field should not be null",
+                        });
                         this.state.done = false;
                       } else {
-                        document.getElementById("area").style.border =
-                          "1px solid black";
-                        // this.setState({ done: true });
+                        this.setState({ area: "" });
                         this.state.done = true;
                       }
                       if (
                         reg.test(document.getElementById("email").value) ==
                         false
                       ) {
-                        document.getElementById("email").style.border =
-                          "1px solid red";
-                        // this.setState({ done: false });
+                        this.setState({ email: "* Incorrect Email" });
                         this.state.done = false;
                       }
 
                       if (this.state.done == true) {
-                        bc = document.getElementById("btn");
-                        bc.style.background = "rgba(255,0,0,0.6)";
-                        bc.style.border = "rgba(255,0,0,0.6)";
-                        if (bc.value == "Submit")
-                          bc.value = "Thank You, I'll get to you soon.";
-                        else bc.value = "Submit";
+                        this.state.value = "Thank You, I'll get to you soon.";
+                        this.setState({ btn: "true" });
                       }
                     }}
-                  ></input>
+                  >
+                    {this.state.value}
+                  </Button>
                 </div>
                 <div className="letUsTalk">
                   <span className="smlheading">LET'S TALK</span>
@@ -626,24 +617,32 @@ export default class Home extends Component {
                   <span className="bighead">REACH OUT TO ME AT</span>
                 </div>
                 <div className="containerr">
-                  <div className="box">
-                    <div className="icon">
+                  <div className="firstCon">
+                    <div className="inner">
                       <i className="fa fa-map-marker" aria-hidden="true"></i>
-                      <h4>Address</h4>
-                      <h3>Nimzan Nazzar, Hapugastalawa</h3>
+                    </div>
+                    &nbsp;
+                    <div className="name">
+                      <h3>Nimzan Nazzar</h3>
                     </div>
                   </div>
-                  <div className="box">
-                    <div className="icon">
+                  &nbsp;
+                  <div className="firstCon">
+                    <div className="inner">
                       <i className="fa fa-phone" aria-hidden="true"></i>
-                      <h4>Mobile</h4>
+                    </div>
+                    &nbsp;
+                    <div className="name">
                       <h3>+94 77 712 1553</h3>
                     </div>
                   </div>
-                  <div className="box">
-                    <div className="icon">
+                  &nbsp;
+                  <div className="firstCon">
+                    <div className="inner">
                       <i className="fa fa-envelope" aria-hidden="true"></i>
-                      <h4>Email</h4>
+                    </div>
+                    &nbsp;
+                    <div className="name">
                       <h3>mnimzan@gmail.com</h3>
                     </div>
                   </div>
