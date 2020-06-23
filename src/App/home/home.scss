@@ -56,13 +56,13 @@
           cursor: pointer;
           &:hover,
           &.active {
-            color: blue;
+            color: #0e76a8;
           }
           &::after {
             content: "";
             width: 0%;
             height: 1px;
-            background-color: blue;
+            background-color: #0e76a8;
             position: absolute;
             bottom: 0%;
             left: 50%;
@@ -137,7 +137,6 @@
       }
     }
     .whoAmI {
-      border: 1px solid black;
       margin-top: 7.5%;
       overflow: hidden;
       // height: 100vh;
@@ -174,11 +173,9 @@
     }
 
     .mySkills {
-      border: 1px solid black;
       padding: 0% 5%;
       overflow: hidden;
-      // width: calc(100vw - 300px);
-      margin-top: 7.5%;
+      margin-top: 15%;
       .smlheading {
         font-family: "Roboto", sans-serif;
         font-size: 10px;
@@ -206,9 +203,9 @@
       }
     }
     .skillImage {
-      margin-top: 20%;
+      margin-top: 8%;
       .parallax {
-        background: url(./man.jpg);
+        background: url(./s1.JPG);
         background-attachment: fixed;
         background-position: center center;
 
@@ -221,10 +218,10 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-            .h1 {
-              // color: white;
-              // color: black;
-              width: 100px;
+            // border: 1px solid red;
+            h1 {
+              // width: 200px;
+              font-size: 50px;
               color: red;
             }
             span {
@@ -244,7 +241,6 @@
     }
 
     .education {
-      border: 1px solid black;
       overflow: hidden;
       margin-top: 7.5%;
       // z-index: -1;
@@ -287,12 +283,11 @@
     }
 
     .contact {
-      border: 1px solid black;
       overflow: hidden;
       // margin-top: 80%;
       // z-index: -1;
       padding: 0% 5%;
-      margin-top: 7.5%;
+      margin-top: 15%;
       .smlheading {
         font-family: "Roboto", sans-serif;
         font-size: 10px;
@@ -350,8 +345,9 @@
         .firstCon {
           display: flex;
           flex-direction: row;
-          justify-content: space-around;
+          // justify-content: space-around;
           .inner {
+            box-shadow: 0 5px 15px -5px #00000070;
             background-color: #f4f4f4;
             height: 100px;
             width: 100px;
@@ -365,13 +361,11 @@
             }
           }
           .name {
-            width: calc(100vw - 100px);
-
+            // width: calc(100vw - 100px);
             display: flex;
             align-items: center;
-
             margin-left: 20px;
-
+            letter-spacing: 1px;
             font-family: "Quicksand", sans-serif;
           }
         }
@@ -628,7 +622,7 @@
             font-size: 100%;
           }
           .sub {
-            font-size: 15%;
+            font-size: 40%;
           }
         }
         .copywrite {
@@ -666,6 +660,15 @@
             margin-right: auto;
             width: 200%;
           }
+          .img1 {
+            .head {
+              font-size: 300%;
+            }
+            .sub {
+              font-size: 80%;
+              color: rgb(129, 116, 116);
+            }
+          }
         }
       }
       .whoAmI {
@@ -685,9 +688,10 @@
       .skillImage {
         margin-top: 10%;
         .parallax {
-          background: url(./man.jpg);
+          background: url(./s1.JPG);
           background-attachment: fixed;
           background-position: center center;
+          // -webkit-backface-visibility: hidden;
 
           .one {
             display: flex;
@@ -713,6 +717,22 @@
         .form {
           display: flex;
           align-items: center;
+        }
+        .containerr {
+          .firstCon {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            .name {
+              width: calc(100vw - 100px);
+              display: flex;
+              align-items: center;
+              margin-left: 20px;
+              font-size: 90%;
+              font-family: "Quicksand", sans-serif;
+            }
+          }
         }
       }
     }

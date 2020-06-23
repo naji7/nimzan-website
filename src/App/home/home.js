@@ -1,40 +1,21 @@
-import React, { Component, useRef, useEffect } from "react";
-import AnimatedNumber from "react-animated-number";
+import React, { Component } from "react";
+
 import CountUp, { startAnimation } from "react-countup";
 import "./home.scss";
 import img from "./nim1.jpg";
-import img1 from "./floor.jpg";
-import img2 from "./nim2.jpg";
-import img3 from "./nimp.JPG";
-
-import * as Scroll from "react-scroll";
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
-import BottomBar from "../templates/bottomBar";
+import img2 from "./nimSide.JPG";
+import { Link, animateScroll as scroll } from "react-scroll";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import Typography from "@material-ui/core/Typography";
+
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { act } from "react-dom/test-utils";
-import { withStyles } from "@material-ui/core/styles";
-import Aos from "aos";
+
 import "aos/dist/aos.css";
 import VisibilitySensor from "react-visibility-sensor";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-const style = {
-  componentName: {},
-  col: {},
-  countup: {},
-};
 export default class Home extends Component {
   state = {
     done: false,
@@ -213,7 +194,6 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
-
         <div
           id="cont"
           className="main"
@@ -250,8 +230,8 @@ export default class Home extends Component {
               <p>
                 {" "}
                 <strong> Nimzan Nazzar</strong>, former student of Al Min Haj
-                National School is completed his BSc(Hons) Computer
-                Science(Software Engineering) Degree at{" "}
+                National School. Nimzan is completed his BSc(Hons) Computer
+                Science and Software Engineering Degree at{" "}
                 <a href="https://www.sliit.lk/">
                   Sri Lanka Institute Of Information Technology.
                 </a>{" "}
@@ -286,8 +266,8 @@ export default class Home extends Component {
             <div className="para">
               <p>
                 I have technical skills that will simply take your breath away.
-                But wait…there’s more. You get all this Technical knowledge plus
-                a grasp of marketing that is second nature.
+                But wait… there’s more. You get all this Technical knowledge
+                plus a grasp of marketing that is second nature.
               </p>
             </div>
           </div>
@@ -311,13 +291,13 @@ export default class Home extends Component {
                       )}
                     </CountUp>
                   </h1>
-                  <span className="label">COMUNICATION</span>
+                  <span className="label">COMMUNICATION</span>
                 </div>
                 <div className="one-one">
                   <h1>
                     <CountUp
                       className="h1"
-                      end={98}
+                      end={30}
                       duration={3}
                       suffix="%"
                       decimals={1}
@@ -330,13 +310,13 @@ export default class Home extends Component {
                       )}
                     </CountUp>
                   </h1>
-                  <span className="label">LEADERSHIP</span>
+                  <span className="label">GET SICK</span>
                 </div>
                 <div className="one-one">
                   <h1>
                     <CountUp
                       className="h1"
-                      end={87}
+                      end={80}
                       duration={2}
                       suffix="%"
                       decimals={1}
@@ -349,13 +329,13 @@ export default class Home extends Component {
                       )}
                     </CountUp>
                   </h1>
-                  <span className="label">CREATIVITY</span>
+                  <span className="label">SARCASM</span>
                 </div>
                 <div className="one-one">
                   <h1>
                     <CountUp
                       className="h1"
-                      end={80}
+                      end={10}
                       duration={3}
                       suffix="%"
                       decimals={1}
@@ -465,9 +445,10 @@ export default class Home extends Component {
                     enthusiasm to regularly practice what I learned, led me to
                     very good results in the exams. Programming algorithms,
                     networking, deep studies on computers, lab sessions were
-                    irresistible. And finally I completed BSc ....... It was
-                    only 5 years back when I made my greatest decision to switch
-                    my field of study and it has now proven correct.
+                    irresistible. And finally I completed BSc(Hons) Computer
+                    Science and Software Engineering Degree. It was only 5 years
+                    back when I made my greatest decision to switch my field of
+                    study and it has now proven correct.
                   </span>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
@@ -611,7 +592,7 @@ export default class Home extends Component {
                 </div>
                 &nbsp;
                 <div className="name">
-                  <h3>Nimzan Nazzar</h3>
+                  Nimzan Nazzar <br /> Hapugastalawa
                 </div>
               </div>
               &nbsp;
@@ -620,9 +601,7 @@ export default class Home extends Component {
                   <i className="fa fa-phone" aria-hidden="true"></i>
                 </div>
                 &nbsp;
-                <div className="name">
-                  <h3>+94 77 712 1553</h3>
-                </div>
+                <div className="name">+94 77 712 1553</div>
               </div>
               &nbsp;
               <div className="firstCon">
@@ -630,9 +609,7 @@ export default class Home extends Component {
                   <i className="fa fa-envelope" aria-hidden="true"></i>
                 </div>
                 &nbsp;
-                <div className="name">
-                  <h3>mnimzan@gmail.com</h3>{" "}
-                </div>
+                <div className="name">mnimzan16@gmail.com</div>
               </div>
             </div>
             <div>
