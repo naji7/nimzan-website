@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 
 import CountUp, { startAnimation } from "react-countup";
+import PropTypes from "prop-types";
 import "./home.scss";
 import img from "./nim1.jpg";
 import img2 from "./nimSide.JPG";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { withStyles } from "@material-ui/core/styles";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
@@ -32,8 +34,20 @@ export default class Home extends Component {
       startAnimation(this.myCountUp);
     }
   };
+  constructor(props) {
+    super(props);
+    this.state = {
+      expanded: false,
+      setExpanded: false,
+    };
+  }
 
-  render() {
+  render(props) {
+    const handleChange = (panel) => (event, isExpanded) => {
+      this.setState({ expanded: isExpanded ? panel : false });
+      console.log(this.state.expanded);
+    };
+
     return (
       <div className="mainn">
         <div>
@@ -362,10 +376,16 @@ export default class Home extends Component {
               <span className="bighead">EDUCATION</span>
             </div>
             <div className="panel">
-              <ExpansionPanel className="ExpansionPanel">
+              <ExpansionPanel
+                className="ExpansionPanel"
+                expanded={this.state.expanded === "panel1"}
+                onChange={handleChange("panel1")}
+              >
                 <ExpansionPanelSummary
                   className="ExpansionPanelSummary"
                   expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1bh-content"
+                  id="panel1bh-header"
                 >
                   <span>2000</span>
                 </ExpansionPanelSummary>
@@ -380,12 +400,17 @@ export default class Home extends Component {
                 </ExpansionPanelDetails>
               </ExpansionPanel>
               &nbsp;
-              <ExpansionPanel className="ExpansionPanel">
+              <ExpansionPanel
+                className="ExpansionPanel"
+                expanded={this.state.expanded === "panel2"}
+                onChange={handleChange("panel2")}
+              >
                 <ExpansionPanelSummary
                   className="ExpansionPanelSummary"
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
                   id="panel2a-header"
+                  aria-controls="panel1bh-content"
                 >
                   <span>2001 - 2011</span>
                 </ExpansionPanelSummary>
@@ -403,7 +428,11 @@ export default class Home extends Component {
                 </ExpansionPanelDetails>
               </ExpansionPanel>
               &nbsp;
-              <ExpansionPanel className="ExpansionPanel">
+              <ExpansionPanel
+                className="ExpansionPanel"
+                expanded={this.state.expanded === "panel3"}
+                onChange={handleChange("panel3")}
+              >
                 <ExpansionPanelSummary
                   className="ExpansionPanelSummary"
                   expandIcon={<ExpandMoreIcon />}
@@ -421,7 +450,11 @@ export default class Home extends Component {
                 </ExpansionPanelDetails>
               </ExpansionPanel>
               &nbsp;
-              <ExpansionPanel className="ExpansionPanel">
+              <ExpansionPanel
+                className="ExpansionPanel"
+                expanded={this.state.expanded === "panel4"}
+                onChange={handleChange("panel4")}
+              >
                 <ExpansionPanelSummary
                   className="ExpansionPanelSummary"
                   expandIcon={<ExpandMoreIcon />}
@@ -661,3 +694,24 @@ export default class Home extends Component {
     );
   }
 }
+
+// const styles = StyleSheet.create({
+//   conta: {
+//     backgroundColor: "blue",
+//   },
+// });
+
+// const styles = (theme) => ({
+//   root: {
+//     width: "100%",
+//   },
+//   heading: {
+//     fontSize: theme.typography.pxToRem(15),
+//     fontWeight: theme.typography.fontWeightRegular,
+//   },
+//   conta: {
+//     backgroundColor: theme.palette.primary.main,
+//   },
+// });
+
+// const conta = { backgroundColor: "blue" };
