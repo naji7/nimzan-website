@@ -24,6 +24,7 @@
             height: 170px;
             width: 170px;
             border-radius: 50%;
+            object-fit: cover;
           }
         }
         span {
@@ -133,6 +134,9 @@
             opacity: 0.8;
             padding-top: 15px;
           }
+        }
+        .img2 {
+          visibility: hidden;
         }
       }
     }
@@ -661,12 +665,27 @@
             width: 200%;
           }
           .img1 {
+            visibility: hidden;
+          }
+          .img2 {
+            visibility: visible;
+            position: absolute;
+            top: 35%;
+            left: 10%;
+            animation: slideUp 3s ease-out;
             .head {
-              font-size: 300%;
+              font-family: "Playfair Display", serif;
+              font-size: 330%;
+              letter-spacing: 1px;
             }
             .sub {
               font-size: 80%;
               color: rgb(129, 116, 116);
+              position: absolute;
+              font-family: "Quicksand", sans-serif;
+              letter-spacing: 2px;
+              opacity: 0.8;
+              padding-top: 15px;
             }
           }
         }

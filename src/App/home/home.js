@@ -19,26 +19,23 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 export default class Home extends Component {
-  state = {
-    done: false,
-    value: "Submit",
-    name: "",
-    email: "",
-    phone: "",
-    area: "",
-    btn: "",
-  };
-
   onVisibilityChange = (isVisible) => {
-    if (isVisible) {
-      startAnimation(this.myCountUp);
-    }
+    // if (isVisible) {
+    //   startAnimation(this.myCountUp);
+    // }
   };
   constructor(props) {
     super(props);
     this.state = {
       expanded: false,
       setExpanded: false,
+      done: false,
+      value: "Submit",
+      name: "",
+      email: "",
+      phone: "",
+      area: "",
+      btn: "",
     };
   }
 
@@ -230,11 +227,16 @@ export default class Home extends Component {
                 <br />
                 <span className="sub">Software Engineer | SEO Analyst</span>
               </div>
+              <div className="img2">
+                <span className="head">Nimzan Nazzar</span>
+                <br />
+                <span className="sub">Software Engineer | SEO Analyst</span>
+              </div>
             </div>
           </div>
           <div className="whoAmI" id="s2" data-aos="fade-right">
             <div>
-              <span className="smlheading">ABOUT US</span>
+              <span className="smlheading">ABOUT ME</span>
             </div>
             &nbsp;
             <div>
@@ -259,8 +261,8 @@ export default class Home extends Component {
                   RakBank.
                 </a>
                 <br />
-                <br /> Nimzan is a IT enthusiast with a good eye on the level of
-                detail. Having graduated as a computer engineer, he is well
+                <br /> Nimzan is an IT enthusiast with a good eye on the level
+                of detail. Having graduated as a computer engineer, he is well
                 skilled on real time web technologies and is currently working
                 as a software engineer. His eye for creativity helps Nimzan
                 contribute in design/prototype phases of projects while
@@ -501,7 +503,7 @@ export default class Home extends Component {
                 Software Engineering, SEO consulting or simply to share your
                 experience.
                 <br />
-                <br /> Please sent us a message.
+                <br /> Please send us a message.
               </p>
             </div>
             <div className="form">
@@ -694,24 +696,3 @@ export default class Home extends Component {
     );
   }
 }
-
-// const styles = StyleSheet.create({
-//   conta: {
-//     backgroundColor: "blue",
-//   },
-// });
-
-// const styles = (theme) => ({
-//   root: {
-//     width: "100%",
-//   },
-//   heading: {
-//     fontSize: theme.typography.pxToRem(15),
-//     fontWeight: theme.typography.fontWeightRegular,
-//   },
-//   conta: {
-//     backgroundColor: theme.palette.primary.main,
-//   },
-// });
-
-// const conta = { backgroundColor: "blue" };

@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #1f2235 !important;
+}
+#nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  .navbar {
+    background-color: #1f2235 !important;
+    padding: 0 !important;
+    .navbar-brand {
+      a {
+        padding-left: 20px;
+        color: #ff4a57 !important;
+      }
+    }
+    .navbar-toggler {
+      outline: none !important;
+      .fa-bars {
+        color: #fff;
+        font-size: 30px !important;
+      }
+    }
+  }
+  .navbar-nav {
+    font-family: "Titillium Web", sans-serif;
+    letter-spacing: 1px;
+    li {
+      padding: 0 10px;
+      a {
+        cursor: pointer;
+        color: #fff !important;
+        font-weight: 600;
+        float: left;
+        text-align: left;
+      }
+    }
+  }
+}
+//////////////
+#banner {
+  padding-top: 5%;
+  color: white;
+  .container {
+    .row {
+      .sidename {
+        .blinking {
+          overflow: hidden;
+          padding: 0.5rem;
+          .typed-text {
+          }
+          .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #cccccc;
+            margin-left: 0.1rem;
+            animation: blink 1s infinite;
+            .typing {
+              animation: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    background-color: #cccccc;
+  }
+  49% {
+    background-color: #cccccc;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #cccccc;
+  }
+}
+#about {
+  padding: 80px 0px;
+  color: white;
+}
+#skills {
+  .container {
+    .mainbar {
+      width: 500px;
+      margin: 60px auto;
+      list-style: none;
+      li {
+        color: white;
+        margin: 20px 0;
+        .bar {
+          background: #353b48;
+          display: block;
+          height: 5px;
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          border-radius: 3px;
+          overflow: hidden;
+          box-shadow: 0 0 10px #2187e7b3;
+          span {
+            height: 2px;
+            float: left;
+            background: #2187e7;
+          }
+          .html {
+            width: 90%;
+            animation: html 2s;
+          }
+          .css {
+            width: 45%;
+            animation: css 2s;
+          }
+          .react {
+            width: 60%;
+            animation: react 2s;
+          }
+          .java {
+            width: 73%;
+            animation: java 2s;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes html {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+@keyframes css {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 45%;
+  }
+}
+@keyframes react {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 60%;
+  }
+}
+@keyframes java {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 73%;
+  }
+}
+
+#education {
+  .container {
+    .eduDetail {
+      width: 40%;
+      margin: 0 auto;
+      margin-top: 100px;
+      color: #fff;
+      .accordion {
+        width: 100%;
+        padding: 0 5px;
+        border: 2px solid #ff4a57;
+        cursor: pointer;
+        border-radius: 50px;
+        display: flex;
+        margin: 10px 0;
+        align-items: center;
+        transition: all 0.5s ease-in;
+        .icon {
+          margin: 0 10px 0 0;
+          width: 30px;
+          height: 30px;
+          background: url("../assets/plus.png") no-repeat 8px 7px #ff4a57;
+          border-radius: 50%;
+          float: left;
+          transition: all 0.5s ease-in;
+        }
+        h5 {
+          font-size: 22px;
+          margin: 0;
+          padding: 3px 0 0 0;
+          font-weight: normal;
+          color: white;
+        }
+        .active {
+          background-color: #ff4a57;
+          color: #fff;
+          .icon {
+            background: url("../assets/plus.png") no-repeat 8px -25px #fff;
+          }
+        }
+      }
+      .panel {
+        padding: 0 15px;
+        border-left: 1px solid #ff4a57;
+        margin-left: 25px;
+        font-size: 14px;
+        text-align: justify;
+        overflow: hidden;
+        max-height: 0;
+        transition: all 0.5s ease-in;
+      }
+    }
+  }
+}
