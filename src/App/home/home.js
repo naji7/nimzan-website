@@ -197,6 +197,7 @@ export default class Home extends Component {
                   ></i>
                 </div>
               </div>
+
               <div className="final">
                 <span>
                   Copyright &copy; 2020 Nimzan Nazzar. All Rights Reserved
