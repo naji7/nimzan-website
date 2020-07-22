@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Typical from "react-typical";
 import "aos/dist/aos.css";
+import ScrollAnimation from "react-animate-on-scroll";
 
 import "./index.scss";
 
@@ -253,61 +254,61 @@ export default class Index extends Component {
                 <li>
                   <h3>HTML5 / CSS3</h3>
                   <span className="bar">
-                    <span className="html"></span>
+                    <span className="html" data-aos="slide-right"></span>
                   </span>
                 </li>
                 <li>
                   <h3>JAVA</h3>
                   <span className="bar">
-                    <span className="java"></span>
+                    <span className="java" data-aos="slide-right"></span>
                   </span>
                 </li>
                 <li>
                   <h3>JAVASCRIPT / TYPESCRIPT</h3>
                   <span className="bar">
-                    <span className="script"></span>
+                    <span className="script" data-aos="slide-right"></span>
                   </span>
                 </li>
                 <li>
                   <h3>ANGULAR JS</h3>
                   <span className="bar">
-                    <span className="angular"></span>
+                    <span className="angular" data-aos="slide-right"></span>
                   </span>
                 </li>
                 <li>
                   <h3>C++</h3>
                   <span className="bar">
-                    <span className="c1"></span>
+                    <span className="c1" data-aos="slide-right"></span>
                   </span>
                 </li>
                 <li>
                   <h3>C#</h3>
                   <span className="bar">
-                    <span className="c2"></span>
+                    <span className="c2" data-aos="slide-right"></span>
                   </span>
                 </li>
                 <li>
                   <h3>FLUTTER</h3>
                   <span className="bar">
-                    <span className="flut"></span>
+                    <span className="flut" data-aos="slide-right"></span>
                   </span>
                 </li>
                 <li>
                   <h3>MY SQL</h3>
                   <span className="bar">
-                    <span className="sql"></span>
+                    <span className="sql" data-aos="slide-right"></span>
                   </span>
                 </li>
                 <li>
                   <h3>FIREBASE</h3>
                   <span className="bar">
-                    <span className="fire"></span>
+                    <span className="fire" data-aos="slide-right"></span>
                   </span>
                 </li>
                 <li>
                   <h3>SQ LITE</h3>
                   <span className="bar">
-                    <span className="sqlite"></span>
+                    <span className="sqlite" data-aos="slide-right"></span>
                   </span>
                 </li>
               </div>
