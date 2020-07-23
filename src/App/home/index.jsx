@@ -52,6 +52,10 @@ export default class Index extends Component {
     return (
       <div>
         <nav>
+          <input type="checkbox" id="check" />
+          <label for="check" className="checkbtn">
+            <i className="fa fa-bars"></i>
+          </label>
           <div className="logo">
             <a> NIMZAN </a>
           </div>
