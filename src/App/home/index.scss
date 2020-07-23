@@ -5,48 +5,130 @@
 body {
   background-color: #1f2235 !important;
 }
-#nav-bar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background-color: #ccc;
+// #nav-bar {
+//   position: sticky;
+//   top: 0;
+//   z-index: 10;
+//   background-color: #ccc;
 
-  .navbar {
-    background-color: #1f2235 !important;
-    padding: 15px 50px !important;
-    .navbar-brand {
-      a {
-        // padding-left: 20px;
-        color: #ff4a57 !important;
-      }
-    }
-    .navbar-toggler {
-      outline: none !important;
-      .fa-bars {
-        color: #fff;
-        font-size: 30px !important;
-      }
+//   .navbar {
+//     background-color: #1f2235 !important;
+//     padding: 15px 50px !important;
+//     .navbar-brand {
+//       a {
+//         // padding-left: 20px;
+//         color: #ff4a57 !important;
+//       }
+//     }
+//     .navbar-toggler {
+//       outline: none !important;
+//       .fa-bars {
+//         color: #fff;
+//         font-size: 30px !important;
+//       }
+//     }
+//   }
+
+//   .navbar-nav {
+//     font-family: "Poppins", sans-serif;
+//     letter-spacing: 1px;
+//     li {
+//       padding: 0 10px;
+//       a {
+//         cursor: pointer;
+//         color: #fff !important;
+//         font-weight: 600;
+//         float: left;
+//         text-align: left;
+//       }
+//     }
+//   }
+// }
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 15px 50px !important;
+  box-sizing: border-box;
+  transition: 0.5s;
+  z-index: 999;
+  animation: scroll 0.6s 1;
+  .logo {
+    float: left;
+    a {
+      color: whitesmoke;
+      visibility: hidden;
     }
   }
-
-  .navbar-nav {
-    font-family: "Poppins", sans-serif;
-    letter-spacing: 1px;
+  ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: whitesmoke;
     li {
-      padding: 0 10px;
+      list-style: none;
+      text-transform: uppercase;
       a {
-        cursor: pointer;
-        color: #fff !important;
-        font-weight: 600;
-        float: left;
-        text-align: left;
+        list-style: 80px;
+        color: whitesmoke;
+        padding: 5px 20px;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        &:hover {
+          transition: all 0.3s ease-in;
+          text-decoration: none;
+          color: #ff4a57;
+        }
       }
     }
   }
 }
-
+.black {
+  background-color: #1f2235 !important;
+  height: 50px;
+  color: whitesmoke;
+  animation: scroll1 1s 1;
+  .logo {
+    a {
+      font-size: 20px;
+      letter-spacing: 3px;
+      font-family: "Kanit", sans-serif;
+      color: #ff4a57;
+      visibility: visible;
+      cursor: pointer;
+      &:hover {
+        color: #ff4a57;
+      }
+    }
+  }
+}
+@keyframes scroll {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes scroll1 {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
 //////////////
 #banner {
+  margin-top: 30px;
   .container {
     .row {
       .sidename {
@@ -112,6 +194,11 @@ body {
         animation: mouse 2s infinite;
       }
     }
+  }
+}
+.add {
+  .middle {
+    visibility: hidden;
   }
 }
 @keyframes mouse {
@@ -236,100 +323,11 @@ body {
   }
 }
 
-// @keyframes html {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 95%;
-//   }
-// }
-// @keyframes java {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 82%;
-//   }
-// }
-// @keyframes script {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 90%;
-//   }
-// }
-// @keyframes angular {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 70%;
-//   }
-// }
-// @keyframes sql {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 75%;
-//   }
-// }
-// @keyframes fire {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 86%;
-//   }
-// }
-// @keyframes flut {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 65%;
-//   }
-// }
-// @keyframes c1 {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 96%;
-//   }
-// }
-// @keyframes c2 {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 94%;
-//   }
-// }
-// @keyframes sqlite {
-//   0% {
-//     width: 0%;
-//   }
-//   100% {
-//     width: 80%;
-//   }
-// }
-
 #education {
   font-family: "Quicksand", sans-serif;
   padding-top: 80px;
   .container {
     .head {
-      //   a:before {
-      //     color: whitesmoke;
-      //     content: "\f000";
-      //     font-family: "FontAwesome";
-      //     font-style: normal;
-      //     font-weight: normal;
-      //     text-decoration: inherit;
-      //   }
       h1 {
         font-family: "Kanit", sans-serif;
         letter-spacing: 2px;
@@ -367,11 +365,10 @@ body {
           margin: 0 10px 0 0;
           float: left;
           transition: all 0.5s ease-in;
+          font-size: 13px;
           &::after {
-            content: "\f055";
+            content: "\f067";
             font-family: "fontawesome";
-            // font-size: 14px;
-            // float: right;
           }
         }
         h5 {
@@ -386,8 +383,9 @@ body {
       }
       .active {
         background-color: #ff4a563d;
+        font-size: 13px;
         .icon::after {
-          content: "\f056";
+          content: "\f068";
         }
       }
       .panel {
@@ -461,7 +459,53 @@ body {
               transition: 0.2s;
             }
           }
+          a {
+            position: relative;
+            display: inline-block;
+            padding: 15px 30px;
+            border: 2px solid #ff4a57;
+            text-transform: uppercase;
+            color: #ff4a57;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 20px;
+            width: 300px;
+            span {
+              position: relative;
+              z-index: 3;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              top: 6px;
+              left: -2px;
+              width: calc(100% + 4px);
+              height: calc(100% - 12px);
+              background: #1f2235;
+              transition: 0.5s ease-in-out;
+              transform: scaleY(1);
+              transition-delay: 0.5s;
+            }
+            &:hover::before {
+              transform: scaleY(0);
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              left: 6px;
+              top: -2px;
+              height: calc(100% + 4px);
+              width: calc(100% - 12px);
+              background: #1f2235;
+              transition: 0.5s ease-in-out;
+              transform: scaleX(1);
+            }
+            &:hover::after {
+              transform: scaleX(0);
+            }
+          }
           .Button {
+            margin-top: 30px;
             border-radius: 5px;
             transition-duration: 0.4s;
             padding: 16px 13px;

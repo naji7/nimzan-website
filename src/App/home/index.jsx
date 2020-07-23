@@ -3,34 +3,35 @@ import { Link } from "react-router-dom";
 import Typical from "react-typical";
 import "aos/dist/aos.css";
 import ScrollAnimation from "react-animate-on-scroll";
+import $ from "jquery";
 
 import "./index.scss";
 
 let lastScrollY = 0;
 let ticking = 0;
 export default class Index extends Component {
-  // componentDidMount() {
-  //   window.addEventListener("scroll", this.handleScroll, true);
-  // }
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll, true);
+  }
 
-  // componentWillUnmount() {
-  //   window.removeEventListener("scroll", this.handleScroll);
-  // }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
 
-  // nav = React.createRef();
+  nav = React.createRef();
 
-  // handleScroll = () => {
-  //   lastScrollY = window.scrollY;
-
-  //   if (!ticking) {
-  //     window.requestAnimationFrame(() => {
-  //       var header = document.getElementById("nav-bar");
-  //       header.classList.toggle("shrink", window.scrollY > 0);
-  //     });
-
-  //     ticking = true;
-  //   }
-  // };
+  handleScroll = () => {
+    $(window).on("scroll", function () {
+      if ($(window).scrollTop() > 300) {
+        var header = document.getElementById("banner");
+        $("nav").addClass("black");
+        $("#banner").addClass("add");
+      } else {
+        $("nav").removeClass("black");
+        $("#banner").removeClass("add");
+      }
+    });
+  };
 
   render() {
     function addEdu(e) {
@@ -50,79 +51,28 @@ export default class Index extends Component {
     }
     return (
       <div>
-        <section id="nav-bar" className="bai">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand">
-              <a> NIMZAN </a>
-            </a>
-
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <i className="fa fa-bars"></i>
-            </button>
-
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav ml-auto">
-                <Link to="banner">
-                  <li spy={true} smooth={true} offset={-70} duration={500}>
-                    <a>HOME</a>
-                  </li>
-                </Link>
-                <Link
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                >
-                  <li>
-                    <a>ABOUT</a>
-                  </li>
-                </Link>
-                <Link
-                  to="skills"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                >
-                  <li>
-                    <a>SKILLS</a>
-                  </li>
-                </Link>
-                <Link
-                  to="education"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                >
-                  <li>
-                    <a>EDUCATION</a>
-                  </li>
-                </Link>
-                <Link
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                >
-                  <li>
-                    <a>CONTACT</a>
-                  </li>
-                </Link>
-              </ul>
-            </div>
-          </nav>
-        </section>
+        <nav>
+          <div className="logo">
+            <a> NIMZAN </a>
+          </div>
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Skills</a>
+            </li>
+            <li>
+              <a href="#">Education</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
 
         <section id="banner">
           <div className="container">
@@ -544,12 +494,20 @@ export default class Index extends Component {
                       Your Message
                     </label>
                   </div>
+                  <a href="#">
+                    <span>submit</span>
+                  </a>
                   <button id="btn" className="Button">
                     SUBMIT
                   </button>
                 </div>
               </div>
-              <div className="col-md-6" id="map"></div>
+              <div
+                className="col-md-6"
+                id="map"
+                // data-aos="fade-zoom-in"
+                // data-aos-delay="300"
+              ></div>
             </div>
           </div>
         </section>
