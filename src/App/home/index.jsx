@@ -2,13 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Typical from "react-typical";
 import "aos/dist/aos.css";
-import ScrollAnimation from "react-animate-on-scroll";
 import $ from "jquery";
 
 import "./index.scss";
 
-let lastScrollY = 0;
-let ticking = 0;
 export default class Index extends Component {
   state = {
     menuOpen: false,
@@ -25,7 +22,7 @@ export default class Index extends Component {
 
   handleScroll = () => {
     $(window).on("scroll", function () {
-      if ($(window).scrollTop() > 300) {
+      if ($(window).scrollTop()) {
         $("nav").addClass("black");
         $("#banner").addClass("add");
       } else {
@@ -51,17 +48,15 @@ export default class Index extends Component {
         };
       }
     }
+
     function burgerBtn() {
       $(".menu-btn").toggleClass("open");
       $("nav").toggleClass("checked");
     }
+
     return (
       <div>
         <nav>
-          {/* <input type="checkbox" id="check" />
-          <label for="check" className="checkbtn">
-            <i className="fa fa-bars"></i>
-          </label> */}
           <div className="menu-btn" onClick={burgerBtn}>
             <div className="menu-btn_burger"></div>
           </div>
@@ -99,6 +94,7 @@ export default class Index extends Component {
                     steps={["Software Engineer", 1000, "SEO Analyst", 1000]}
                   />
                 </p>
+
                 <div className="icon">
                   <a className="fa fa-facebook"></a>
                   <a className="fa fa-twitter"></a>
@@ -507,9 +503,6 @@ export default class Index extends Component {
                       Your Message
                     </label>
                   </div>
-                  <a href="#">
-                    <span>submit</span>
-                  </a>
                   <button id="btn" className="Button">
                     SUBMIT
                   </button>
