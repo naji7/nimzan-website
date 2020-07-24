@@ -10,6 +10,9 @@ import "./index.scss";
 let lastScrollY = 0;
 let ticking = 0;
 export default class Index extends Component {
+  state = {
+    menuOpen: false,
+  };
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll, true);
   }
@@ -23,7 +26,6 @@ export default class Index extends Component {
   handleScroll = () => {
     $(window).on("scroll", function () {
       if ($(window).scrollTop() > 300) {
-        var header = document.getElementById("banner");
         $("nav").addClass("black");
         $("#banner").addClass("add");
       } else {
@@ -49,13 +51,20 @@ export default class Index extends Component {
         };
       }
     }
+    function burgerBtn() {
+      $(".menu-btn").toggleClass("open");
+      $("nav").toggleClass("checked");
+    }
     return (
       <div>
         <nav>
-          <input type="checkbox" id="check" />
+          {/* <input type="checkbox" id="check" />
           <label for="check" className="checkbtn">
             <i className="fa fa-bars"></i>
-          </label>
+          </label> */}
+          <div className="menu-btn" onClick={burgerBtn}>
+            <div className="menu-btn_burger"></div>
+          </div>
           <div className="logo">
             <a> NIMZAN </a>
           </div>
