@@ -44,15 +44,26 @@ export default class Index extends Component {
       let acc = document.getElementsByClassName("accordion");
 
       for (let i = 0; i < acc.length; i++) {
-        acc[i].onclick = function () {
+        // acc[i].onclick = function () {
+        //   this.classList.toggle("active");
+        //   var panel = this.nextElementSibling;
+        //   if (panel.style.maxHeight) {
+        //     panel.style.maxHeight = null;
+        //   } else {
+        //     panel.style.maxHeight = panel.scrollHeight + "px";
+        //   }
+        // };
+
+        acc[i].addEventListener("click", function () {
           this.classList.toggle("active");
+
           var panel = this.nextElementSibling;
           if (panel.style.maxHeight) {
             panel.style.maxHeight = null;
           } else {
             panel.style.maxHeight = panel.scrollHeight + "px";
           }
-        };
+        });
       }
     }
 
@@ -154,6 +165,11 @@ export default class Index extends Component {
                     wrapper="b"
                     steps={["Software Engineer", 1000, "SEO Analyst", 1000]}
                   />
+                </p>
+                <p className="sub">
+                  Software engineer with holistic knowledge in all levels of
+                  testing, including performance, functional, integration,
+                  system and user acceptance.
                 </p>
 
                 <div className="icon">
