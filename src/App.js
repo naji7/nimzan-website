@@ -17,7 +17,7 @@ import ParticleComponent from "./ParticleComponent";
 
 const App = () => {
   useEffect(() => {
-    Aos.init({ duration: 1200 });
+    Aos.init({ duration: 2000 });
   }, []);
   return (
     <div>
@@ -25,15 +25,14 @@ const App = () => {
         name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"
       ></meta>
-      {/* {loading ? lyricsItem : <ReactBootStrap.Spinner animation="border" />} */}
-      {/* <Router>
+      <Router>
         <Switch>
           <Route path="/">
             <Layout />
           </Route>
         </Switch>
-      </Router> */}
-      <Router>
+      </Router>
+      {/* <Router>
         <div
           style={{
             position: "absolute",
@@ -60,7 +59,7 @@ const App = () => {
             </Switch>
           </div>
         </div>
-      </Router>
+      </Router> */}
       ;
     </div>
   );

@@ -1,14 +1,21 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Typical from "react-typical";
 import "aos/dist/aos.css";
 import $ from "jquery";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 import "./index.scss";
 
 export default class Index extends Component {
   state = {
     menuOpen: false,
+    name: "hidden",
+    phone: "hidden",
+    email: "hidden",
+    area: "hidden",
+    value: "SUBMIT",
+    btn: "",
+    done: false,
   };
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll, true);
@@ -65,19 +72,73 @@ export default class Index extends Component {
           </div>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <Link
+                className="spann"
+                activeClass="active"
+                to="banner"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                onClick={burgerBtn}
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <a href="#">About</a>
+              <Link
+                className="spann"
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                onClick={burgerBtn}
+              >
+                About
+              </Link>
             </li>
             <li>
-              <a href="#">Skills</a>
+              <Link
+                className="spann"
+                activeClass="active"
+                to="skills"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                Skills
+              </Link>
             </li>
             <li>
-              <a href="#">Education</a>
+              <Link
+                className="spann"
+                activeClass="active"
+                to="education"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                onClick={burgerBtn}
+              >
+                Education
+              </Link>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <Link
+                className="spann"
+                activeClass="active"
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                onClick={burgerBtn}
+              >
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>
@@ -120,7 +181,11 @@ export default class Index extends Component {
         <section id="about">
           <div className="container text-center">
             <div className="row ">
-              <div className="col-md-6 text-center" data-aos="fade-right">
+              <div
+                className="col-md-6 text-center"
+                data-aos="fade-zoom-in"
+                data-aos-delay="600"
+              >
                 <img
                   src={require("../assets/about1.JPG")}
                   className="img-fluid maimg"
@@ -450,13 +515,25 @@ export default class Index extends Component {
                   >
                     <input
                       type="text"
-                      id="inputField"
+                      id="name"
                       required
                       className="input-area"
+                      onKeyUp={(i) => {
+                        let key = i.target.value
+                          .toString()
+                          .replace(/[^A-Za-z]/gi, "");
+                        document.getElementById("name").value = key;
+                      }}
                     />
-                    <label for="inputField" className="label">
+                    <label for="name" className="label" id="lname">
                       Username
                     </label>
+                    <a
+                      className="fa fa-exclamation"
+                      style={{
+                        visibility: this.state.name,
+                      }}
+                    ></a>
                   </div>
                   <div
                     className="input-group"
@@ -465,13 +542,19 @@ export default class Index extends Component {
                   >
                     <input
                       type="text"
-                      id="inputField"
+                      id="email"
                       required
                       className="input-area"
                     />
-                    <label for="inputField" className="label">
+                    <label for="email" className="label" id="lemail">
                       Email
                     </label>
+                    <a
+                      className="fa fa-exclamation"
+                      style={{
+                        visibility: this.state.email,
+                      }}
+                    ></a>
                   </div>
                   <div
                     className="input-group"
@@ -480,13 +563,25 @@ export default class Index extends Component {
                   >
                     <input
                       type="text"
-                      id="inputField"
+                      id="phone"
                       required
                       className="input-area"
+                      onKeyUp={(i) => {
+                        let key = i.target.value
+                          .toString()
+                          .replace(/[a-zA-Z]/g, "");
+                        document.getElementById("phone").value = key;
+                      }}
                     />
-                    <label for="inputField" className="label">
+                    <label for="phone" className="label" id="lphone">
                       Phone
                     </label>
+                    <a
+                      className="fa fa-exclamation"
+                      style={{
+                        visibility: this.state.phone,
+                      }}
+                    ></a>
                   </div>
                   <div
                     className="input-group"
@@ -495,25 +590,110 @@ export default class Index extends Component {
                   >
                     <input
                       type="text"
-                      id="message"
+                      id="area"
                       required
                       className="input-area"
                     />
-                    <label for="message" className="label">
+                    <label for="area" className="label" id="larea">
                       Your Message
                     </label>
+                    <a
+                      className="fa fa-exclamation"
+                      style={{
+                        visibility: this.state.area,
+                      }}
+                    ></a>
                   </div>
-                  <button id="btn" className="Button">
-                    SUBMIT
+                  <button
+                    disabled={this.state.btn}
+                    id="btn"
+                    className="Button"
+                    onClick={() => {
+                      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                      var bc = null;
+                      if (document.getElementById("name").value == "") {
+                        this.setState({
+                          name: "visible",
+                        });
+                        document.getElementById("lname").style.color =
+                          "#ff4a57";
+                        this.state.done = false;
+                      } else {
+                        this.setState({ name: "hidden" });
+                        this.state.done = true;
+                      }
+                      if (document.getElementById("email").value == "") {
+                        this.setState({
+                          email: "visible",
+                        });
+                        document.getElementById("lemail").style.color =
+                          "#ff4a57";
+                        this.state.done = false;
+                      } else {
+                        this.setState({ email: "hidden" });
+                        this.state.done = true;
+                      }
+                      if (document.getElementById("phone").value == "") {
+                        this.setState({
+                          phone: "visible",
+                        });
+                        document.getElementById("lphone").style.color =
+                          "#ff4a57";
+                        this.state.done = false;
+                      } else {
+                        this.setState({ phone: "hidden" });
+                        this.state.done = true;
+                      }
+                      if (document.getElementById("area").value == "") {
+                        this.setState({
+                          area: "visible",
+                        });
+                        document.getElementById("larea").style.color =
+                          "#ff4a57";
+                        this.state.done = false;
+                      } else {
+                        this.setState({ area: "hidden" });
+                        this.state.done = true;
+                      }
+                      if (
+                        reg.test(document.getElementById("email").value) ==
+                        false
+                      ) {
+                        this.setState({ email: "visible" });
+                        this.state.done = false;
+                        document.getElementById("lemail").style.color =
+                          "#ff4a57";
+                      }
+
+                      if (this.state.done == true) {
+                        this.state.value = "Thank You, I'll get to you soon.";
+                        this.setState({ btn: "true" });
+                        document.getElementById("name").value = "";
+                        document.getElementById("email").value = "";
+                        document.getElementById("area").value = "";
+                        document.getElementById("phone").value = "";
+                        document.getElementById("lname").style.color =
+                          "whitesmoke";
+                        document.getElementById("lemail").style.color =
+                          "whitesmoke";
+                        document.getElementById("larea").style.color =
+                          "whitesmoke";
+                        document.getElementById("lphone").style.color =
+                          "whitesmoke";
+                      }
+                    }}
+                  >
+                    {this.state.value}
                   </button>
                 </div>
               </div>
               <div
-                className="col-md-6"
-                id="map"
-                // data-aos="fade-zoom-in"
-                // data-aos-delay="300"
-              ></div>
+                className="col-md-6 map"
+                data-aos="fade-zoom-in"
+                data-aos-delay="600"
+              >
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7919.165313255943!2d80.56759357306898!3d7.058224529608619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae376e96475eea9%3A0x53dbbbfcff705b84!2sHapugastalawa!5e0!3m2!1sen!2slk!4v1595610398935!5m2!1sen!2slk" />
+              </div>
             </div>
           </div>
         </section>
