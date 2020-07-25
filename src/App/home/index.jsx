@@ -131,7 +131,7 @@ export default class Index extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-6 sidename">
-                <p className="tite">NIMZAN NAZZAR</p>
+                <a className="tite">NIMZAN NAZZAR</a>
                 <p className="blinking">
                   <Typical
                     loop={Infinity}
@@ -144,7 +144,6 @@ export default class Index extends Component {
                   testing, including performance, functional, integration,
                   system and user acceptance.
                 </p>
-
                 <div className="icon">
                   <a
                     className="fa fa-facebook"
