@@ -139,11 +139,12 @@ nav {
 }
 //////////////
 #banner {
-  margin-top: 30px;
+  margin-top: 90px;
+  overflow: hidden;
   .container {
     .row {
       .sidename {
-        margin-top: 250px;
+        margin-top: 180px;
         .tite {
           color: #ff4a57;
           font-family: "Kanit", sans-serif;
@@ -325,15 +326,19 @@ nav {
             animation: flut 2s;
           }
           .c1 {
-            width: 96%;
+            width: 90%;
             animation: flut 2s;
           }
           .c2 {
-            width: 94%;
+            width: 89%;
             animation: flut 2s;
           }
           .sqlite {
             width: 80%;
+            animation: flut 2s;
+          }
+          .jq {
+            width: 95%;
             animation: flut 2s;
           }
         }

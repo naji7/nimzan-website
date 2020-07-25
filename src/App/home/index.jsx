@@ -40,33 +40,6 @@ export default class Index extends Component {
   };
 
   render() {
-    function addEdu(e) {
-      let acc = document.getElementsByClassName("accordion");
-
-      for (let i = 0; i < acc.length; i++) {
-        // acc[i].onclick = function () {
-        //   this.classList.toggle("active");
-        //   var panel = this.nextElementSibling;
-        //   if (panel.style.maxHeight) {
-        //     panel.style.maxHeight = null;
-        //   } else {
-        //     panel.style.maxHeight = panel.scrollHeight + "px";
-        //   }
-        // };
-
-        acc[i].addEventListener("click", function () {
-          this.classList.toggle("active");
-
-          var panel = this.nextElementSibling;
-          if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-          } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-          }
-        });
-      }
-    }
-
     function burgerBtn() {
       $(".menu-btn").toggleClass("open");
       $("nav").toggleClass("checked");
@@ -173,12 +146,47 @@ export default class Index extends Component {
                 </p>
 
                 <div className="icon">
-                  <a className="fa fa-facebook"></a>
-                  <a className="fa fa-twitter"></a>
-                  <a className="fa fa-instagram"></a>
-                  <a className="fa fa-linkedin"></a>
-                  <a className="fa fa-whatsapp"></a>
-                  <a className="fa fa-envelope"></a>
+                  <a
+                    className="fa fa-facebook"
+                    onClick={() => {
+                      window.open("https://www.facebook.com/mohamed.nimzan.9");
+                    }}
+                  ></a>
+                  <a
+                    className="fa fa-twitter"
+                    onClick={() => {
+                      window.open("https://twitter.com/NimzanNazzar");
+                    }}
+                  ></a>
+                  <a
+                    className="fa fa-instagram"
+                    onClick={() => {
+                      window.open("https://www.instagram.com/nimz_zlatan/");
+                    }}
+                  ></a>
+                  <a
+                    className="fa fa-linkedin"
+                    onClick={() => {
+                      window.open(
+                        "https://www.linkedin.com/in/nimzan-nazzar-60613797/"
+                      );
+                    }}
+                  ></a>
+                  <a
+                    className="fa fa-github"
+                    onClick={() => {
+                      window.open("https://www.github.com/Nimzan/");
+                    }}
+                  ></a>
+
+                  <a
+                    style={{ textDecoration: "none" }}
+                    href="https://api.whatsapp.com/send?phone=94777121553&text=hi!,%20Nimzan."
+                    class="float"
+                    target="_blank"
+                  >
+                    <a className="fa fa-whatsapp"></a>
+                  </a>
                 </div>
               </div>
               <div className="col-md-6 text-center image">
@@ -328,6 +336,12 @@ export default class Index extends Component {
                   </span>
                 </li>
                 <li>
+                  <h3>JQUERY / BOOTSTRAP</h3>
+                  <span className="bar">
+                    <span className="jq" data-aos="slide-right"></span>
+                  </span>
+                </li>
+                <li>
                   <h3>FLUTTER</h3>
                   <span className="bar">
                     <span className="flut" data-aos="slide-right"></span>
@@ -393,7 +407,16 @@ export default class Index extends Component {
             <div className="eduDetail">
               <div
                 className="accordion"
-                onClick={addEdu}
+                onClick={() => {
+                  let acc = document.getElementsByClassName("accordion");
+                  acc[0].classList.toggle("active");
+                  var panel = acc[0].nextElementSibling;
+                  if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                  } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                  }
+                }}
                 data-aos="fade-right"
                 data-aos-duration="500"
               >
@@ -412,7 +435,16 @@ export default class Index extends Component {
 
               <div
                 className="accordion"
-                onClick={addEdu}
+                onClick={() => {
+                  let acc = document.getElementsByClassName("accordion");
+                  acc[1].classList.toggle("active");
+                  var panel = acc[1].nextElementSibling;
+                  if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                  } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                  }
+                }}
                 data-aos="fade-left"
                 data-aos-duration="500"
               >
@@ -434,7 +466,16 @@ export default class Index extends Component {
 
               <div
                 className="accordion"
-                onClick={addEdu}
+                onClick={() => {
+                  let acc = document.getElementsByClassName("accordion");
+                  acc[2].classList.toggle("active");
+                  var panel = acc[2].nextElementSibling;
+                  if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                  } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                  }
+                }}
                 data-aos="fade-right"
                 data-aos-duration="500"
               >
@@ -450,7 +491,16 @@ export default class Index extends Component {
               </div>
               <div
                 className="accordion"
-                onClick={addEdu}
+                onClick={() => {
+                  let acc = document.getElementsByClassName("accordion");
+                  acc[3].classList.toggle("active");
+                  var panel = acc[3].nextElementSibling;
+                  if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                  } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                  }
+                }}
                 data-aos="fade-left"
                 data-aos-duration="500"
               >
@@ -718,16 +768,38 @@ export default class Index extends Component {
             <a href="" className="logo text-center">
               <div className="social">
                 <a href="">
-                  <i className="fa fa-facebook"></i>
+                  <i
+                    className="fa fa-facebook"
+                    onClick={() => {
+                      window.open("https://www.facebook.com/mohamed.nimzan.9");
+                    }}
+                  ></i>
                 </a>
                 <a href="">
-                  <i className="fa fa-twitter"></i>
+                  <i
+                    className="fa fa-twitter"
+                    onClick={() => {
+                      window.open("https://twitter.com/NimzanNazzar");
+                    }}
+                  ></i>
                 </a>
                 <a href="">
-                  <i className="fa fa-instagram"></i>
+                  <i
+                    className="fa fa-instagram"
+                    onClick={() => {
+                      window.open("https://www.instagram.com/nimz_zlatan/");
+                    }}
+                  ></i>
                 </a>
                 <a href="">
-                  <i className="fa fa-linkedin"></i>
+                  <i
+                    className="fa fa-linkedin"
+                    onClick={() => {
+                      window.open(
+                        "https://www.linkedin.com/in/nimzan-nazzar-60613797/"
+                      );
+                    }}
+                  ></i>
                 </a>
               </div>
               <hr />
