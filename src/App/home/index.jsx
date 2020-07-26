@@ -180,7 +180,7 @@ export default class Index extends Component {
 
                   <a
                     style={{ textDecoration: "none" }}
-                    href="https://api.whatsapp.com/send?phone=94777121553&text=hi!,%20Nimzan."
+                    href="https://api.whatsapp.com/send?phone=94777121553&text=hi!%20Nimzan."
                     class="float"
                     target="_blank"
                   >
