@@ -224,7 +224,7 @@ export default class Index extends Component {
                     Sri Lanka Institute Of Information Technology.
                   </a>{" "}
                   <br /> <br />
-                  The 24 years old has three year plus work experience in the
+                  The 25 years old has three year plus work experience in the
                   area of Software Engineering and Search Engine optimizing(SEO)
                   with reputed Organizations.
                   <br />
@@ -235,9 +235,9 @@ export default class Index extends Component {
                   <br />
                   <br /> Nimzan is an IT enthusiast with a good eye on the level
                   of detail. Having graduated as a computer engineer, he is well
-                  skilled on real time web technologies and is currently working
-                  as a software engineer. His eye for creativity helps Nimzan
-                  contribute in design/prototype phases of projects while
+                  skilled on real time web technologies and he is currently
+                  working as a software engineer. His eye for creativity helps
+                  Nimzan contribute in design/prototype phases of projects while
                   supporting teams across their complete development stack in
                   transforming the design to a complete product.
                 </p>
@@ -454,7 +454,7 @@ export default class Index extends Component {
                 <p>
                   School days are without doubt an interesting episode in my
                   life. Apart from the fun, getting through exams is one of many
-                  challenges that also come in my way. After successfully
+                  challenges that also came in my way. After successfully
                   qualified Grade-five scholarship examination, unlike unit
                   tests and term tests, O/L is deciding factor in school life
                   that gives you the entry ticket to university and future
