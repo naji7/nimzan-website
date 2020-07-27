@@ -92,6 +92,7 @@ export default class Index extends Component {
                 smooth={true}
                 offset={-70}
                 duration={500}
+                onClick={burgerBtn}
               >
                 Skills
               </Link>
