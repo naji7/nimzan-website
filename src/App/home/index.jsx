@@ -2,7 +2,14 @@ import React, { Component } from "react";
 import Typical from "react-typical";
 import "aos/dist/aos.css";
 import $ from "jquery";
-import { Link, animateScroll as scroll } from "react-scroll";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 import "./index.scss";
 
@@ -197,7 +204,12 @@ export default class Index extends Component {
               </div>
             </div>
           </div>
-          <div className="middle">
+          <div
+            className="middle"
+            onClick={() => {
+              scroll.scrollTo(800);
+            }}
+          >
             <div className="mouse"></div>
           </div>
         </section>
