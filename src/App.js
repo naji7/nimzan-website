@@ -1,7 +1,7 @@
 import React, { Component, useRef, useEffect, lazy, Suspense } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-// import Layout from "./App/skeliton/layout";
+import Particles from "react-particles-js";
 import {
   BrowserRouter as Router,
   Switch,
@@ -35,6 +35,19 @@ const App = () => {
         <Router>
           <Switch>
             <Route path="/">
+              <Particles
+                params={{
+                  particles: {
+                    number: {
+                      value: 200,
+                      density: {
+                        enable: true,
+                        value_area: 1000,
+                      },
+                    },
+                  },
+                }}
+              />
               <Layout />
             </Route>
           </Switch>

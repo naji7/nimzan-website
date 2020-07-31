@@ -12,6 +12,9 @@ import {
 } from "react-scroll";
 
 import "./index.scss";
+import ParticlesContainer from "./ParticlesContainer";
+import ParticlesContainer1 from "./ParticlesContainer1";
+import ParticlesContainer2 from "./ParticlesContainer2";
 
 export default class Index extends Component {
   state = {
@@ -212,6 +215,10 @@ export default class Index extends Component {
           >
             <div className="mouse"></div>
           </div>
+          <div className="mosque"></div>
+          <ParticlesContainer />
+          <ParticlesContainer1 />
+          <ParticlesContainer2 />
         </section>
 
         <section id="about">
