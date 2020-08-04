@@ -35,19 +35,6 @@ const App = () => {
         <Router>
           <Switch>
             <Route path="/">
-              <Particles
-                params={{
-                  particles: {
-                    number: {
-                      value: 200,
-                      density: {
-                        enable: true,
-                        value_area: 1000,
-                      },
-                    },
-                  },
-                }}
-              />
               <Layout />
             </Route>
           </Switch>
