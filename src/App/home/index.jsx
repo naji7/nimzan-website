@@ -220,7 +220,7 @@ export default class Index extends Component {
               <div
                 className="col-md-6 text-center"
                 data-aos="fade-zoom-in"
-                data-aos-delay="600"
+                data-aos-delay="300"
               >
                 <img
                   src={require("../assets/about1.JPG")}
