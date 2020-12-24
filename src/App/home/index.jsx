@@ -68,8 +68,8 @@ export default class Index extends Component {
 
     return (
       <div>
-          <ParticlesContainer />
-          <ParticlesContainer2 />
+        <ParticlesContainer />
+        <ParticlesContainer2 />
         <nav>
           <div className="menu-btn" onClick={burgerBtn}>
             <div className="menu-btn_burger"></div>

@@ -38,7 +38,7 @@ class ParticlesContainer2 extends Component {
               },
             },
             opacity: {
-              value: 1,
+              value: 0.8,
               random: false,
               anim: {
                 enable: false,

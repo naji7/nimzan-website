@@ -10,7 +10,7 @@ class ParticlesContainer extends Component {
         params={{
           particles: {
             number: {
-              value: 50,
+              value: 40,
               density: {
                 enable: true,
                 value_area: 800,
@@ -34,7 +34,7 @@ class ParticlesContainer extends Component {
                 nb_sides: 5,
               },
               image: {
-               
+                src: "",
                 width: 100,
                 height: 100,
               },
@@ -50,8 +50,8 @@ class ParticlesContainer extends Component {
               },
             },
             size: {
-              value: 2,
-              random: true,
+              value: 1.5,
+              random: false,
               anim: {
                 enable: false,
                 speed: 20,
