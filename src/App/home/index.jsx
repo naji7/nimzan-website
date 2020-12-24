@@ -10,8 +10,13 @@ import {
   scrollSpy,
   scroller,
 } from "react-scroll";
+import ParticlesContainer from "./ParticlesContainer";
+import Lottie from 'react-lottie'
+import animationData from './41812-christmas-tree.json'
 
 import "./index.scss";
+import ParticlesContainer2 from "./ParticlesContainer2";
+
 
 export default class Index extends Component {
   state = {
@@ -52,8 +57,19 @@ export default class Index extends Component {
       $("nav").toggleClass("checked");
     }
 
+    const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
+
     return (
       <div>
+          <ParticlesContainer />
+          <ParticlesContainer2 />
         <nav>
           <div className="menu-btn" onClick={burgerBtn}>
             <div className="menu-btn_burger"></div>
@@ -134,7 +150,7 @@ export default class Index extends Component {
             </li>
           </ul>
         </nav>
-
+       
         <section id="banner">
           <div className="container">
             <div className="row">
@@ -212,7 +228,20 @@ export default class Index extends Component {
           >
             <div className="mouse"></div>
           </div>
+        
+          {/* <div className="mosque"></div> */}
+
+          {/* <ParticlesContainer />
+          <ParticlesContainer2 /> */}
+         
         </section>
+
+        <div className="tree">
+            <Lottie options={defaultOptions}
+              height={300}
+              width={300}
+        />
+            </div>
 
         <section id="about">
           <div className="container text-center">

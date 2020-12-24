@@ -7,10 +7,14 @@ import {
   Redirect,
 } from "react-router-dom";
 import Aos from "aos";
+import Particles from 'react-particles-js';
+
 import "aos/dist/aos.css";
 import Load from "./load";
 
+
 const Layout = lazy(() => import("./App/skeliton/layout"));
+
 
 const App = () => {
   useEffect(() => {
@@ -25,6 +29,7 @@ const App = () => {
         </div>
       }
     >
+    
       <div>
         <meta
           name="viewport"
@@ -33,10 +38,15 @@ const App = () => {
         <Router>
           <Switch>
             <Route path="/">
+
               <Layout />
             </Route>
           </Switch>
         </Router>
+      </div>
+
+      <div>
+        
       </div>
     </Suspense>
   );
