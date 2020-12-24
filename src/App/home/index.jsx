@@ -228,7 +228,7 @@ export default class Index extends Component {
           >
             <div className="mouse"></div>
           </div>
-        /
+
           {/* <div className="mosque"></div> */}
 
           {/* <ParticlesContainer />
