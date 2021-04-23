@@ -11,12 +11,11 @@ import {
   scroller,
 } from "react-scroll";
 import ParticlesContainer from "./ParticlesContainer";
-import Lottie from 'react-lottie'
-import animationData from './41812-christmas-tree.json'
+import Lottie from "react-lottie";
+import animationData from "./41812-christmas-tree.json";
 
 import "./index.scss";
 import ParticlesContainer2 from "./ParticlesContainer2";
-
 
 export default class Index extends Component {
   state = {
@@ -62,14 +61,14 @@ export default class Index extends Component {
       autoplay: true,
       animationData: animationData,
       rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-      }
+        preserveAspectRatio: "xMidYMid slice",
+      },
     };
 
     return (
       <div>
-        <ParticlesContainer />
-        <ParticlesContainer2 />
+        {/* <ParticlesContainer />
+        <ParticlesContainer2 /> */}
         <nav>
           <div className="menu-btn" onClick={burgerBtn}>
             <div className="menu-btn_burger"></div>
@@ -150,7 +149,7 @@ export default class Index extends Component {
             </li>
           </ul>
         </nav>
-       
+
         <section id="banner">
           <div className="container">
             <div className="row">
@@ -233,15 +232,14 @@ export default class Index extends Component {
 
           {/* <ParticlesContainer />
           <ParticlesContainer2 /> */}
-         
         </section>
 
-        <div className="tree">
+        {/* <div className="tree">
             <Lottie options={defaultOptions}
               height={300}
               width={300}
         />
-            </div>
+            </div> */}
 
         <section id="about">
           <div className="container text-center">
@@ -845,7 +843,7 @@ export default class Index extends Component {
               </div>
               <hr />
               <p className="copyright ">
-                Copyright &copy; 2020 Nimzan Nazzar. All Rights Reserved
+                Copyright &copy; 2021 Nimzan Nazzar. All Rights Reserved
               </p>
             </a>
           </div>
