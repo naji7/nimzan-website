@@ -691,7 +691,7 @@ export default class Index extends Component {
                   <div
                     className="input-group"
                     data-aos="fade-zoom-in"
-                    data-aos-delay="1200"
+                    data-aos-delay="1000"
                   >
                     <input
                       type="text"
