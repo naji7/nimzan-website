@@ -2,20 +2,10 @@ import React, { Component } from "react";
 import Typical from "react-typical";
 import "aos/dist/aos.css";
 import $ from "jquery";
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
-import ParticlesContainer from "./ParticlesContainer";
-import Lottie from "react-lottie";
+import { Link, animateScroll as scroll } from "react-scroll";
 import animationData from "./41812-christmas-tree.json";
 
 import "./index.scss";
-import ParticlesContainer2 from "./ParticlesContainer2";
 
 export default class Index extends Component {
   state = {
@@ -67,8 +57,6 @@ export default class Index extends Component {
 
     return (
       <div>
-        {/* <ParticlesContainer />
-        <ParticlesContainer2 /> */}
         <nav>
           <div className="menu-btn" onClick={burgerBtn}>
             <div className="menu-btn_burger"></div>
@@ -227,19 +215,7 @@ export default class Index extends Component {
           >
             <div className="mouse"></div>
           </div>
-
-          {/* <div className="mosque"></div> */}
-
-          {/* <ParticlesContainer />
-          <ParticlesContainer2 /> */}
         </section>
-
-        {/* <div className="tree">
-            <Lottie options={defaultOptions}
-              height={300}
-              width={300}
-        />
-            </div> */}
 
         <section id="about">
           <div className="container text-center">

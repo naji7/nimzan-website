@@ -7,14 +7,11 @@ import {
   Redirect,
 } from "react-router-dom";
 import Aos from "aos";
-import Particles from 'react-particles-js';
 
 import "aos/dist/aos.css";
 import Load from "./load";
 
-
 const Layout = lazy(() => import("./App/skeliton/layout"));
-
 
 const App = () => {
   useEffect(() => {
@@ -29,7 +26,6 @@ const App = () => {
         </div>
       }
     >
-    
       <div>
         <meta
           name="viewport"
@@ -38,28 +34,13 @@ const App = () => {
         <Router>
           <Switch>
             <Route path="/">
-            <Particles
-                params={{
-                  particles: {
-                    number: {
-                      value: 200,
-                      density: {
-                        enable: true,
-                        value_area: 1000,
-                      },
-                    },
-                  },
-                }}
-              />
               <Layout />
             </Route>
           </Switch>
         </Router>
       </div>
 
-      <div>
-        
-      </div>
+      <div></div>
     </Suspense>
   );
 };
