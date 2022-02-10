@@ -19,7 +19,7 @@
     "google-map-react": "^1.1.7",
     "jquery": "^3.5.1",
     "lottie-web": "^5.7.5",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "parallax-js": "^3.1.0",
     "particlesjs": "^2.2.3",
     "react": "^16.13.1",
